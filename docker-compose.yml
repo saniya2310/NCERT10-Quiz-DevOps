@@ -3,11 +3,12 @@ services:
     build: .
     image: ncert10-quiz:latest
     ports:
-      - "3000:3000"
+      - "${APP_PORT:-3001}:3000"
     environment:
       NODE_ENV: production
       PORT: 3000
-      NEXT_PUBLIC_APP_URL: http://localhost:3000
+      HOSTNAME: "0.0.0.0"
+      NEXT_PUBLIC_APP_URL: http://localhost:${APP_PORT:-3001}
       LEADERBOARD_PATH: /app/.data/leaderboard.json
     volumes:
       - quiz-data:/app/.data

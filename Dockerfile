@@ -1,4 +1,3 @@
-# syntax=docker/dockerfile:1
 FROM node:20-alpine AS deps
 WORKDIR /app
 COPY package.json ./
@@ -14,6 +13,7 @@ RUN npm run validate:bank && npm run build
 FROM node:20-alpine AS runner
 WORKDIR /app
 ENV NODE_ENV=production
+ENV HOSTNAME="0.0.0.0"
 ENV NEXT_TELEMETRY_DISABLED=1
 RUN apk add --no-cache wget \
   && addgroup -S nodejs \
