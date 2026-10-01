@@ -1,0 +1,14 @@
+apiVersion: v2
+name: ncert10-quiz
+description: Enterprise Helm chart for BoardReady NCERT Class 10 Quiz Platform
+type: application
+version: 1.0.0
+appVersion: "1.0.0"
+keywords:
+  - education
+  - ncert
+  - nextjs
+  - react
+maintainers:
+  - name: DevOps Engineering Team
+    email: devops@boardready.example.com

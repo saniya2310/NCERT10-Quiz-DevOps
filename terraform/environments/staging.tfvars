@@ -1,0 +1,9 @@
+aws_region      = "us-east-1"
+environment     = "staging"
+app_name        = "ncert10-quiz"
+container_image = "ghcr.io/your-org/ncert10-quiz:staging"
+cpu             = 512
+memory          = 1024
+desired_count   = 2
+min_capacity    = 2
+max_capacity    = 5

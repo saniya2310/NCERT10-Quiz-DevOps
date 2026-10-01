@@ -1,0 +1,9 @@
+aws_region      = "us-east-1"
+environment     = "dev"
+app_name        = "ncert10-quiz"
+container_image = "ghcr.io/your-org/ncert10-quiz:dev"
+cpu             = 256
+memory          = 512
+desired_count   = 1
+min_capacity    = 1
+max_capacity    = 3

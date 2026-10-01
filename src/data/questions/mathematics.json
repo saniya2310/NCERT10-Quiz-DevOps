@@ -1,0 +1,512 @@
+[
+  {
+    "id": "math-01",
+    "subjectId": "mathematics",
+    "chapter": "Real Numbers",
+    "ncertRef": "Class 10 Maths, Real Numbers",
+    "difficulty": "easy",
+    "prompt": "HCF of 96 and 404 is 4. What is their LCM?",
+    "options": [
+      { "id": "a", "text": "9696" },
+      { "id": "b", "text": "2424" },
+      { "id": "c", "text": "404" },
+      { "id": "d", "text": "96" }
+    ],
+    "correctOptionId": "a",
+    "explanation": "For two positive integers, HCF × LCM = product of the numbers. So LCM = (96 × 404) / 4 = 9696.",
+    "marks": 1
+  },
+  {
+    "id": "math-02",
+    "subjectId": "mathematics",
+    "chapter": "Polynomials",
+    "ncertRef": "Class 10 Maths, Polynomials",
+    "difficulty": "medium",
+    "prompt": "If the zeroes of x² − 8x + k are equal, then k equals:",
+    "options": [
+      { "id": "a", "text": "8" },
+      { "id": "b", "text": "16" },
+      { "id": "c", "text": "4" },
+      { "id": "d", "text": "32" }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Equal zeroes need discriminant 0: 64 − 4k = 0, so k = 16.",
+    "marks": 1
+  },
+  {
+    "id": "math-03",
+    "subjectId": "mathematics",
+    "chapter": "Pair of Linear Equations",
+    "ncertRef": "Class 10 Maths, Linear Equations in Two Variables",
+    "difficulty": "medium",
+    "prompt": "The pair 2x + 3y = 5 and 4x + 6y = 10 represents:",
+    "options": [
+      { "id": "a", "text": "Intersecting lines" },
+      { "id": "b", "text": "Parallel lines" },
+      { "id": "c", "text": "Coincident lines" },
+      { "id": "d", "text": "No geometric meaning" }
+    ],
+    "correctOptionId": "c",
+    "explanation": "a1/a2 = b1/b2 = c1/c2 = 1/2, so infinitely many solutions: coincident lines.",
+    "marks": 1
+  },
+  {
+    "id": "math-04",
+    "subjectId": "mathematics",
+    "chapter": "Quadratic Equations",
+    "ncertRef": "Class 10 Maths, Quadratic Equations",
+    "difficulty": "easy",
+    "prompt": "The roots of x² − 5x + 6 = 0 are:",
+    "options": [
+      { "id": "a", "text": "2 and 3" },
+      { "id": "b", "text": "−2 and −3" },
+      { "id": "c", "text": "1 and 6" },
+      { "id": "d", "text": "5 and 6" }
+    ],
+    "correctOptionId": "a",
+    "explanation": "x² − 5x + 6 = (x − 2)(x − 3).",
+    "marks": 1
+  },
+  {
+    "id": "math-05",
+    "subjectId": "mathematics",
+    "chapter": "Arithmetic Progressions",
+    "ncertRef": "Class 10 Maths, Arithmetic Progressions",
+    "difficulty": "medium",
+    "prompt": "The 10th term of AP 2, 7, 12, … is:",
+    "options": [
+      { "id": "a", "text": "47" },
+      { "id": "b", "text": "45" },
+      { "id": "c", "text": "52" },
+      { "id": "d", "text": "50" }
+    ],
+    "correctOptionId": "a",
+    "explanation": "a = 2, d = 5, a10 = a + 9d = 2 + 45 = 47.",
+    "marks": 1
+  },
+  {
+    "id": "math-06",
+    "subjectId": "mathematics",
+    "chapter": "Triangles",
+    "ncertRef": "Class 10 Maths, Triangles",
+    "difficulty": "medium",
+    "prompt": "In a right triangle, if the altitude to the hypotenuse is drawn, how many similar triangles are formed including the original?",
+    "options": [
+      { "id": "a", "text": "2" },
+      { "id": "b", "text": "3" },
+      { "id": "c", "text": "4" },
+      { "id": "d", "text": "1" }
+    ],
+    "correctOptionId": "b",
+    "explanation": "The two smaller right triangles are similar to each other and to the original triangle, giving three similar triangles.",
+    "marks": 1
+  },
+  {
+    "id": "math-07",
+    "subjectId": "mathematics",
+    "chapter": "Circles",
+    "ncertRef": "Class 10 Maths, Circles",
+    "difficulty": "easy",
+    "prompt": "A tangent to a circle is perpendicular to the radius at:",
+    "options": [
+      { "id": "a", "text": "The centre" },
+      { "id": "b", "text": "Any point on the radius" },
+      { "id": "c", "text": "The point of contact" },
+      { "id": "d", "text": "The midpoint of a chord" }
+    ],
+    "correctOptionId": "c",
+    "explanation": "The radius is perpendicular to the tangent at the point of contact.",
+    "marks": 1
+  },
+  {
+    "id": "math-08",
+    "subjectId": "mathematics",
+    "chapter": "Introduction to Trigonometry",
+    "ncertRef": "Class 10 Maths, Trigonometry",
+    "difficulty": "easy",
+    "prompt": "sin 30° + cos 60° equals:",
+    "options": [
+      { "id": "a", "text": "1" },
+      { "id": "b", "text": "0" },
+      { "id": "c", "text": "1/2" },
+      { "id": "d", "text": "√3/2" }
+    ],
+    "correctOptionId": "a",
+    "explanation": "sin 30° = 1/2 and cos 60° = 1/2, so the sum is 1.",
+    "marks": 1
+  },
+  {
+    "id": "math-09",
+    "subjectId": "mathematics",
+    "chapter": "Statistics",
+    "ncertRef": "Class 10 Maths, Statistics",
+    "difficulty": "medium",
+    "prompt": "If mean of 5 observations is 15, their total is:",
+    "options": [
+      { "id": "a", "text": "15" },
+      { "id": "b", "text": "3" },
+      { "id": "c", "text": "75" },
+      { "id": "d", "text": "20" }
+    ],
+    "correctOptionId": "c",
+    "explanation": "Mean = sum / n, so sum = 15 × 5 = 75.",
+    "marks": 1
+  },
+  {
+    "id": "math-10",
+    "subjectId": "mathematics",
+    "chapter": "Probability",
+    "ncertRef": "Class 10 Maths, Probability",
+    "difficulty": "easy",
+    "prompt": "A fair die is rolled. Probability of getting a prime number is:",
+    "options": [
+      { "id": "a", "text": "1/2" },
+      { "id": "b", "text": "1/3" },
+      { "id": "c", "text": "1/6" },
+      { "id": "d", "text": "2/3" }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Primes on a die: 2, 3, 5. That is 3 out of 6, so 1/2.",
+    "marks": 1
+  },
+  {
+    "id": "math-11",
+    "subjectId": "mathematics",
+    "chapter": "Coordinate Geometry",
+    "ncertRef": "Class 10 Maths, Coordinate Geometry",
+    "difficulty": "easy",
+    "prompt": "The distance of the point P(-6, 8) from the origin is:",
+    "options": [
+      { "id": "a", "text": "8" },
+      { "id": "b", "text": "2√7" },
+      { "id": "c", "text": "10" },
+      { "id": "d", "text": "6" }
+    ],
+    "correctOptionId": "c",
+    "explanation": "Distance from origin = √(x² + y²) = √((-6)² + 8²) = √(36 + 64) = √100 = 10.",
+    "marks": 1
+  },
+  {
+    "id": "math-12",
+    "subjectId": "mathematics",
+    "chapter": "Coordinate Geometry",
+    "ncertRef": "Class 10 Maths, Coordinate Geometry",
+    "difficulty": "medium",
+    "prompt": "The midpoint of the line segment joining (2, -3) and (6, 5) is:",
+    "options": [
+      { "id": "a", "text": "(4, 1)" },
+      { "id": "b", "text": "(4, 2)" },
+      { "id": "c", "text": "(8, 2)" },
+      { "id": "d", "text": "(-2, 4)" }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Midpoint coordinates = ((x1+x2)/2, (y1+y2)/2) = ((2+6)/2, (-3+5)/2) = (4, 1).",
+    "marks": 1
+  },
+  {
+    "id": "math-13",
+    "subjectId": "mathematics",
+    "chapter": "Real Numbers",
+    "ncertRef": "Class 10 Maths, Real Numbers",
+    "difficulty": "easy",
+    "prompt": "According to the Fundamental Theorem of Arithmetic, every composite number can be expressed uniquely as a product of:",
+    "options": [
+      { "id": "a", "text": "Odd numbers" },
+      { "id": "b", "text": "Primes" },
+      { "id": "c", "text": "Even numbers" },
+      { "id": "d", "text": "Rational numbers" }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Every composite number can be uniquely expressed as a product of primes, apart from the order in which the prime factors occur.",
+    "marks": 1
+  },
+  {
+    "id": "math-14",
+    "subjectId": "mathematics",
+    "chapter": "Polynomials",
+    "ncertRef": "Class 10 Maths, Polynomials",
+    "difficulty": "medium",
+    "prompt": "If α and β are the zeroes of the polynomial f(x) = x² - 7x + 12, then the value of (α + β) - αβ is:",
+    "options": [
+      { "id": "a", "text": "-5" },
+      { "id": "b", "text": "5" },
+      { "id": "c", "text": "-19" },
+      { "id": "d", "text": "19" }
+    ],
+    "correctOptionId": "a",
+    "explanation": "For ax² + bx + c: α + β = -b/a = 7 and αβ = c/a = 12. Therefore, (α + β) - αβ = 7 - 12 = -5.",
+    "marks": 1
+  },
+  {
+    "id": "math-15",
+    "subjectId": "mathematics",
+    "chapter": "Pair of Linear Equations",
+    "ncertRef": "Class 10 Maths, Linear Equations",
+    "difficulty": "medium",
+    "prompt": "For what value of k will the pair of equations x + 2y = 3 and 5x + ky = 7 have no solution?",
+    "options": [
+      { "id": "a", "text": "k = 10" },
+      { "id": "b", "text": "k = 5" },
+      { "id": "c", "text": "k = -10" },
+      { "id": "d", "text": "k = 15" }
+    ],
+    "correctOptionId": "a",
+    "explanation": "For parallel lines (no solution): a1/a2 = b1/b2 ≠ c1/c2. Here 1/5 = 2/k, so k = 10.",
+    "marks": 1
+  },
+  {
+    "id": "math-16",
+    "subjectId": "mathematics",
+    "chapter": "Quadratic Equations",
+    "ncertRef": "Class 10 Maths, Quadratic Equations",
+    "difficulty": "medium",
+    "prompt": "If the discriminant of ax² + bx + c = 0 is less than 0 (D < 0), the roots are:",
+    "options": [
+      { "id": "a", "text": "Real and equal" },
+      { "id": "b", "text": "Real and distinct" },
+      { "id": "c", "text": "No real roots" },
+      { "id": "d", "text": "Rational and equal" }
+    ],
+    "correctOptionId": "c",
+    "explanation": "When the discriminant b² - 4ac < 0, there are no real roots for the quadratic equation.",
+    "marks": 1
+  },
+  {
+    "id": "math-17",
+    "subjectId": "mathematics",
+    "chapter": "Arithmetic Progressions",
+    "ncertRef": "Class 10 Maths, Arithmetic Progressions",
+    "difficulty": "medium",
+    "prompt": "What is the sum of the first 20 positive integers (1 + 2 + 3 + ... + 20)?",
+    "options": [
+      { "id": "a", "text": "190" },
+      { "id": "b", "text": "210" },
+      { "id": "c", "text": "200" },
+      { "id": "d", "text": "420" }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Sn = n(n + 1)/2 = 20 × 21 / 2 = 210.",
+    "marks": 1
+  },
+  {
+    "id": "math-18",
+    "subjectId": "mathematics",
+    "chapter": "Triangles",
+    "ncertRef": "Class 10 Maths, Triangles",
+    "difficulty": "medium",
+    "prompt": "In ΔABC, DE || BC such that AD/DB = 3/5. If AC = 5.6 cm, then AE is:",
+    "options": [
+      { "id": "a", "text": "2.1 cm" },
+      { "id": "b", "text": "3.5 cm" },
+      { "id": "c", "text": "2.8 cm" },
+      { "id": "d", "text": "1.8 cm" }
+    ],
+    "correctOptionId": "a",
+    "explanation": "By Basic Proportionality Theorem, AD/AB = AE/AC. AD/AB = 3/(3+5) = 3/8. So AE = (3/8) × 5.6 = 2.1 cm.",
+    "marks": 1
+  },
+  {
+    "id": "math-19",
+    "subjectId": "mathematics",
+    "chapter": "Circles",
+    "ncertRef": "Class 10 Maths, Circles",
+    "difficulty": "medium",
+    "prompt": "If two tangents inclined at an angle of 60° are drawn to a circle of radius 3 cm, then the length of each tangent is:",
+    "options": [
+      { "id": "a", "text": "3 cm" },
+      { "id": "b", "text": "3√3 cm" },
+      { "id": "c", "text": "6 cm" },
+      { "id": "d", "text": "√3 cm" }
+    ],
+    "correctOptionId": "b",
+    "explanation": "The line joining the external point to centre bisects the 60° angle into 30°. tan 30° = r / L = 3 / L => 1/√3 = 3 / L => L = 3√3 cm.",
+    "marks": 1
+  },
+  {
+    "id": "math-20",
+    "subjectId": "mathematics",
+    "chapter": "Introduction to Trigonometry",
+    "ncertRef": "Class 10 Maths, Trigonometry",
+    "difficulty": "easy",
+    "prompt": "The value of 9 sec²A - 9 tan²A is:",
+    "options": [
+      { "id": "a", "text": "1" },
+      { "id": "b", "text": "9" },
+      { "id": "c", "text": "0" },
+      { "id": "d", "text": "8" }
+    ],
+    "correctOptionId": "b",
+    "explanation": "9 sec²A - 9 tan²A = 9(sec²A - tan²A). Since 1 + tan²A = sec²A, sec²A - tan²A = 1. Thus 9 × 1 = 9.",
+    "marks": 1
+  },
+  {
+    "id": "math-21",
+    "subjectId": "mathematics",
+    "chapter": "Some Applications of Trigonometry",
+    "ncertRef": "Class 10 Maths, Applications of Trigonometry",
+    "difficulty": "medium",
+    "prompt": "A pole 6 m high casts a shadow 2√3 m long on the ground. The sun's angle of elevation is:",
+    "options": [
+      { "id": "a", "text": "30°" },
+      { "id": "b", "text": "45°" },
+      { "id": "c", "text": "60°" },
+      { "id": "d", "text": "90°" }
+    ],
+    "correctOptionId": "c",
+    "explanation": "tan θ = Height / Shadow = 6 / (2√3) = 3 / √3 = √3. Therefore, θ = 60°.",
+    "marks": 1
+  },
+  {
+    "id": "math-22",
+    "subjectId": "mathematics",
+    "chapter": "Areas Related to Circles",
+    "ncertRef": "Class 10 Maths, Areas Related to Circles",
+    "difficulty": "medium",
+    "prompt": "If the perimeter and area of a circle are numerically equal, the radius of the circle is:",
+    "options": [
+      { "id": "a", "text": "2 units" },
+      { "id": "b", "text": "π units" },
+      { "id": "c", "text": "4 units" },
+      { "id": "d", "text": "7 units" }
+    ],
+    "correctOptionId": "a",
+    "explanation": "2πr = πr² => 2 = r (for r > 0). The radius is 2 units.",
+    "marks": 1
+  },
+  {
+    "id": "math-23",
+    "subjectId": "mathematics",
+    "chapter": "Surface Areas and Volumes",
+    "ncertRef": "Class 10 Maths, Surface Areas and Volumes",
+    "difficulty": "medium",
+    "prompt": "If two cubes each of volume 64 cm³ are joined end to end, the surface area of the resulting cuboid is:",
+    "options": [
+      { "id": "a", "text": "128 cm²" },
+      { "id": "b", "text": "160 cm²" },
+      { "id": "c", "text": "192 cm²" },
+      { "id": "d", "text": "256 cm²" }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Side of each cube = ∛64 = 4 cm. Joining gives length = 8 cm, breadth = 4 cm, height = 4 cm. Area = 2(lb + bh + hl) = 2(32 + 16 + 32) = 160 cm².",
+    "marks": 1
+  },
+  {
+    "id": "math-24",
+    "subjectId": "mathematics",
+    "chapter": "Statistics",
+    "ncertRef": "Class 10 Maths, Statistics",
+    "difficulty": "medium",
+    "prompt": "The empirical relationship between the three measures of central tendency is:",
+    "options": [
+      { "id": "a", "text": "3 Mean = Mode + 2 Median" },
+      { "id": "b", "text": "Mode = 3 Median - 2 Mean" },
+      { "id": "c", "text": "Median = 3 Mode - 2 Mean" },
+      { "id": "d", "text": "Mode = 2 Median - 3 Mean" }
+    ],
+    "correctOptionId": "b",
+    "explanation": "The standard empirical formula connecting the measures is Mode = 3 Median - 2 Mean.",
+    "marks": 1
+  },
+  {
+    "id": "math-25",
+    "subjectId": "mathematics",
+    "chapter": "Probability",
+    "ncertRef": "Class 10 Maths, Probability",
+    "difficulty": "easy",
+    "prompt": "If P(E) = 0.05, what is the probability of 'not E'?",
+    "options": [
+      { "id": "a", "text": "0.95" },
+      { "id": "b", "text": "0.05" },
+      { "id": "c", "text": "1.05" },
+      { "id": "d", "text": "0.50" }
+    ],
+    "correctOptionId": "a",
+    "explanation": "P(E) + P(not E) = 1. So P(not E) = 1 - 0.05 = 0.95.",
+    "marks": 1
+  },
+  {
+    "id": "math-26",
+    "subjectId": "mathematics",
+    "chapter": "Real Numbers",
+    "ncertRef": "Class 10 Maths, Real Numbers",
+    "difficulty": "easy",
+    "prompt": "Which of the following is an irrational number?",
+    "options": [
+      { "id": "a", "text": "3.1416" },
+      { "id": "b", "text": "√9" },
+      { "id": "c", "text": "2 + √3" },
+      { "id": "d", "text": "22/7" }
+    ],
+    "correctOptionId": "c",
+    "explanation": "The sum of a rational number and an irrational number is always irrational. √3 is irrational, so 2 + √3 is irrational.",
+    "marks": 1
+  },
+  {
+    "id": "math-27",
+    "subjectId": "mathematics",
+    "chapter": "Introduction to Trigonometry",
+    "ncertRef": "Class 10 Maths, Trigonometry",
+    "difficulty": "medium",
+    "prompt": "If tan θ = 4/3, what is the value of (sin θ + cos θ)?",
+    "options": [
+      { "id": "a", "text": "7/5" },
+      { "id": "b", "text": "5/7" },
+      { "id": "c", "text": "1/5" },
+      { "id": "d", "text": "3/5" }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Opposite = 4, Adjacent = 3 => Hypotenuse = √(4² + 3²) = 5. sin θ = 4/5, cos θ = 3/5. Their sum is 7/5.",
+    "marks": 1
+  },
+  {
+    "id": "math-28",
+    "subjectId": "mathematics",
+    "chapter": "Circles",
+    "ncertRef": "Class 10 Maths, Circles",
+    "difficulty": "easy",
+    "prompt": "How many parallel tangents can a circle have at most?",
+    "options": [
+      { "id": "a", "text": "1" },
+      { "id": "b", "text": "2" },
+      { "id": "c", "text": "4" },
+      { "id": "d", "text": "Infinitely many" }
+    ],
+    "correctOptionId": "b",
+    "explanation": "A circle can have at most two parallel tangents at the opposite ends of a diameter.",
+    "marks": 1
+  },
+  {
+    "id": "math-29",
+    "subjectId": "mathematics",
+    "chapter": "Probability",
+    "ncertRef": "Class 10 Maths, Probability",
+    "difficulty": "medium",
+    "prompt": "One card is drawn from a well-shuffled deck of 52 playing cards. The probability of getting a face card is:",
+    "options": [
+      { "id": "a", "text": "3/13" },
+      { "id": "b", "text": "4/13" },
+      { "id": "c", "text": "1/13" },
+      { "id": "d", "text": "1/2" }
+    ],
+    "correctOptionId": "a",
+    "explanation": "There are 12 face cards (Kings, Queens, Jacks: 4 each) in a deck of 52. Probability = 12/52 = 3/13.",
+    "marks": 1
+  },
+  {
+    "id": "math-30",
+    "subjectId": "mathematics",
+    "chapter": "Statistics",
+    "ncertRef": "Class 10 Maths, Statistics",
+    "difficulty": "easy",
+    "prompt": "The class mark of the class interval 10 - 25 is:",
+    "options": [
+      { "id": "a", "text": "15" },
+      { "id": "b", "text": "17.5" },
+      { "id": "c", "text": "20" },
+      { "id": "d", "text": "35" }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Class mark = (Upper class limit + Lower class limit) / 2 = (25 + 10) / 2 = 35 / 2 = 17.5.",
+    "marks": 1
+  }
+]

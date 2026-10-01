@@ -1,0 +1,26 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ncert10-quiz-ingress
+  namespace: ncert10-quiz
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/proxy-body-size: "8m"
+spec:
+  tls:
+    - hosts:
+        - boardready.example.com
+      secretName: ncert10-quiz-tls
+  rules:
+    - host: boardready.example.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: ncert10-quiz-svc
+                port:
+                  number: 80

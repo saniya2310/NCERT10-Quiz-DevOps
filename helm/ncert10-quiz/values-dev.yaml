@@ -1,0 +1,29 @@
+# Development Environment Helm Values
+replicaCount: 1
+
+env:
+  NODE_ENV: development
+  PORT: 3000
+  NEXT_PUBLIC_APP_URL: https://dev.boardready.example.com
+
+ingress:
+  hosts:
+    - host: dev.boardready.example.com
+      paths:
+        - path: /
+          pathType: Prefix
+  tls:
+    - secretName: dev-boardready-tls
+      hosts:
+        - dev.boardready.example.com
+
+autoscaling:
+  enabled: false
+
+resources:
+  limits:
+    cpu: 300m
+    memory: 256Mi
+  requests:
+    cpu: 50m
+    memory: 64Mi

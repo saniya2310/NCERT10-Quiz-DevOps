@@ -1,0 +1,17 @@
+node_modules
+.next
+out
+.DS_Store
+*.log
+.env
+.env.local
+.data
+coverage
+dist
+.vercel
+*.tsbuildinfo
+.terraform
+*.tfstate
+*.tfstate.*
+.terraform.lock.hcl
+

@@ -1,0 +1,512 @@
+[
+  {
+    "id": "sci-01",
+    "subjectId": "science",
+    "chapter": "Chemical Reactions and Equations",
+    "ncertRef": "Class 10 Science, Chemical Reactions",
+    "difficulty": "easy",
+    "prompt": "Rusting of iron is an example of:",
+    "options": [
+      { "id": "a", "text": "Displacement reaction" },
+      { "id": "b", "text": "Combination / oxidation" },
+      { "id": "c", "text": "Neutralisation" },
+      { "id": "d", "text": "Double displacement" }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Iron combines with oxygen (and moisture) to form rust, an oxidation process.",
+    "marks": 1
+  },
+  {
+    "id": "sci-02",
+    "subjectId": "science",
+    "chapter": "Acids, Bases and Salts",
+    "ncertRef": "Class 10 Science, Acids, Bases and Salts",
+    "difficulty": "easy",
+    "prompt": "Which indicator is red in acid and blue in base?",
+    "options": [
+      { "id": "a", "text": "Phenolphthalein" },
+      { "id": "b", "text": "Methyl orange" },
+      { "id": "c", "text": "Litmus" },
+      { "id": "d", "text": "Turmeric" }
+    ],
+    "correctOptionId": "c",
+    "explanation": "Blue litmus turns red in acid; red litmus turns blue in base.",
+    "marks": 1
+  },
+  {
+    "id": "sci-03",
+    "subjectId": "science",
+    "chapter": "Metals and Non-metals",
+    "ncertRef": "Class 10 Science, Metals and Non-metals",
+    "difficulty": "medium",
+    "prompt": "The most reactive metal among the following is:",
+    "options": [
+      { "id": "a", "text": "Gold" },
+      { "id": "b", "text": "Copper" },
+      { "id": "c", "text": "Sodium" },
+      { "id": "d", "text": "Iron" }
+    ],
+    "correctOptionId": "c",
+    "explanation": "Sodium sits near the top of the reactivity series and reacts vigorously with water.",
+    "marks": 1
+  },
+  {
+    "id": "sci-04",
+    "subjectId": "science",
+    "chapter": "Carbon and its Compounds",
+    "ncertRef": "Class 10 Science, Carbon and its Compounds",
+    "difficulty": "medium",
+    "prompt": "The general formula of alkanes is:",
+    "options": [
+      { "id": "a", "text": "CnH2n" },
+      { "id": "b", "text": "CnH2n+2" },
+      { "id": "c", "text": "CnH2n-2" },
+      { "id": "d", "text": "CnH2n+1" }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Saturated open-chain hydrocarbons (alkanes) follow CnH2n+2.",
+    "marks": 1
+  },
+  {
+    "id": "sci-05",
+    "subjectId": "science",
+    "chapter": "Life Processes",
+    "ncertRef": "Class 10 Science, Life Processes",
+    "difficulty": "easy",
+    "prompt": "In humans, the site of exchange of oxygen and carbon dioxide is the:",
+    "options": [
+      { "id": "a", "text": "Trachea" },
+      { "id": "b", "text": "Alveoli" },
+      { "id": "c", "text": "Bronchi" },
+      { "id": "d", "text": "Larynx" }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Alveoli provide a large, moist surface for gas exchange with blood.",
+    "marks": 1
+  },
+  {
+    "id": "sci-06",
+    "subjectId": "science",
+    "chapter": "Control and Coordination",
+    "ncertRef": "Class 10 Science, Control and Coordination",
+    "difficulty": "medium",
+    "prompt": "Which plant hormone promotes cell elongation in stems?",
+    "options": [
+      { "id": "a", "text": "Abscisic acid" },
+      { "id": "b", "text": "Cytokinin" },
+      { "id": "c", "text": "Auxin" },
+      { "id": "d", "text": "Ethylene" }
+    ],
+    "correctOptionId": "c",
+    "explanation": "Auxins help in stem elongation and phototropic bending.",
+    "marks": 1
+  },
+  {
+    "id": "sci-07",
+    "subjectId": "science",
+    "chapter": "Electricity",
+    "ncertRef": "Class 10 Science, Electricity",
+    "difficulty": "medium",
+    "prompt": "If potential difference is 12 V and current is 3 A, resistance is:",
+    "options": [
+      { "id": "a", "text": "36 Ω" },
+      { "id": "b", "text": "4 Ω" },
+      { "id": "c", "text": "15 Ω" },
+      { "id": "d", "text": "9 Ω" }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Ohm’s law: R = V/I = 12/3 = 4 Ω.",
+    "marks": 1
+  },
+  {
+    "id": "sci-08",
+    "subjectId": "science",
+    "chapter": "Magnetic Effects of Electric Current",
+    "ncertRef": "Class 10 Science, Magnetic Effects",
+    "difficulty": "easy",
+    "prompt": "A current-carrying straight conductor produces a magnetic field that is:",
+    "options": [
+      { "id": "a", "text": "Along the current only" },
+      { "id": "b", "text": "Concentric circles around the wire" },
+      { "id": "c", "text": "Zero everywhere" },
+      { "id": "d", "text": "Only at the ends of the wire" }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Field lines around a long straight wire are concentric circles, shown by the right-hand thumb rule.",
+    "marks": 1
+  },
+  {
+    "id": "sci-09",
+    "subjectId": "science",
+    "chapter": "Light — Reflection and Refraction",
+    "ncertRef": "Class 10 Science, Light",
+    "difficulty": "medium",
+    "prompt": "A convex lens is also called a:",
+    "options": [
+      { "id": "a", "text": "Diverging lens" },
+      { "id": "b", "text": "Converging lens" },
+      { "id": "c", "text": "Plane mirror equivalent" },
+      { "id": "d", "text": "Cylindrical lens only" }
+    ],
+    "correctOptionId": "b",
+    "explanation": "A convex lens converges parallel rays to a focus.",
+    "marks": 1
+  },
+  {
+    "id": "sci-10",
+    "subjectId": "science",
+    "chapter": "Our Environment",
+    "ncertRef": "Class 10 Science, Our Environment",
+    "difficulty": "easy",
+    "prompt": "In a food chain, the maximum energy is available at the:",
+    "options": [
+      { "id": "a", "text": "Tertiary consumers" },
+      { "id": "b", "text": "Producers" },
+      { "id": "c", "text": "Secondary consumers" },
+      { "id": "d", "text": "Decomposers only" }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Energy decreases at each trophic level (about 10% transfer), so producers hold the most.",
+    "marks": 1
+  },
+  {
+    "id": "sci-11",
+    "subjectId": "science",
+    "chapter": "Chemical Reactions and Equations",
+    "ncertRef": "Class 10 Science, Chemical Reactions",
+    "difficulty": "medium",
+    "prompt": "The thermal decomposition of calcium carbonate produces calcium oxide and:",
+    "options": [
+      { "id": "a", "text": "Carbon dioxide" },
+      { "id": "b", "text": "Carbon monoxide" },
+      { "id": "c", "text": "Oxygen" },
+      { "id": "d", "text": "Hydrogen gas" }
+    ],
+    "correctOptionId": "a",
+    "explanation": "CaCO3 -(heat)-> CaO + CO2. Quicklime (CaO) and carbon dioxide gas (CO2) are produced.",
+    "marks": 1
+  },
+  {
+    "id": "sci-12",
+    "subjectId": "science",
+    "chapter": "Acids, Bases and Salts",
+    "ncertRef": "Class 10 Science, Acids, Bases and Salts",
+    "difficulty": "medium",
+    "prompt": "What is the chemical formula of Plaster of Paris?",
+    "options": [
+      { "id": "a", "text": "CaSO4 · 2H2O" },
+      { "id": "b", "text": "CaSO4 · 1/2 H2O" },
+      { "id": "c", "text": "CaSO4 · 5H2O" },
+      { "id": "d", "text": "CaCO3 · 1/2 H2O" }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Plaster of Paris is calcium sulphate hemihydrate: CaSO4 · 1/2 H2O.",
+    "marks": 1
+  },
+  {
+    "id": "sci-13",
+    "subjectId": "science",
+    "chapter": "Metals and Non-metals",
+    "ncertRef": "Class 10 Science, Metals and Non-metals",
+    "difficulty": "medium",
+    "prompt": "Which of the following metal oxides is amphoteric in nature?",
+    "options": [
+      { "id": "a", "text": "Na2O" },
+      { "id": "b", "text": "CaO" },
+      { "id": "c", "text": "Al2O3" },
+      { "id": "d", "text": "K2O" }
+    ],
+    "correctOptionId": "c",
+    "explanation": "Aluminium oxide (Al2O3) and zinc oxide (ZnO) react with both acids and bases and are amphoteric.",
+    "marks": 1
+  },
+  {
+    "id": "sci-14",
+    "subjectId": "science",
+    "chapter": "Carbon and its Compounds",
+    "ncertRef": "Class 10 Science, Carbon and its Compounds",
+    "difficulty": "medium",
+    "prompt": "The functional group present in ethanoic acid (CH3COOH) is:",
+    "options": [
+      { "id": "a", "text": "Aldehyde (-CHO)" },
+      { "id": "b", "text": "Ketone (-CO-)" },
+      { "id": "c", "text": "Carboxylic acid (-COOH)" },
+      { "id": "d", "text": "Alcohol (-OH)" }
+    ],
+    "correctOptionId": "c",
+    "explanation": "-COOH is the carboxylic acid group present in ethanoic acid.",
+    "marks": 1
+  },
+  {
+    "id": "sci-15",
+    "subjectId": "science",
+    "chapter": "Life Processes",
+    "ncertRef": "Class 10 Science, Life Processes",
+    "difficulty": "medium",
+    "prompt": "The breakdown of pyruvate to give carbon dioxide, water and energy takes place in:",
+    "options": [
+      { "id": "a", "text": "Cytoplasm" },
+      { "id": "b", "text": "Mitochondria" },
+      { "id": "c", "text": "Chloroplast" },
+      { "id": "d", "text": "Nucleus" }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Aerobic respiration converting pyruvate into CO2, H2O, and energy (ATP) occurs in the mitochondria.",
+    "marks": 1
+  },
+  {
+    "id": "sci-16",
+    "subjectId": "science",
+    "chapter": "Control and Coordination",
+    "ncertRef": "Class 10 Science, Control and Coordination",
+    "difficulty": "medium",
+    "prompt": "The gap between two neurons is called a:",
+    "options": [
+      { "id": "a", "text": "Dendrite" },
+      { "id": "b", "text": "Synapse" },
+      { "id": "c", "text": "Axon" },
+      { "id": "d", "text": "Impulse" }
+    ],
+    "correctOptionId": "b",
+    "explanation": "The microscopic junction across which nerve impulses pass from dendrite to axon terminal is the synapse.",
+    "marks": 1
+  },
+  {
+    "id": "sci-17",
+    "subjectId": "science",
+    "chapter": "How do Organisms Reproduce?",
+    "ncertRef": "Class 10 Science, Reproduction",
+    "difficulty": "easy",
+    "prompt": "Amoeba reproduces asexually primarily through:",
+    "options": [
+      { "id": "a", "text": "Budding" },
+      { "id": "b", "text": "Binary fission" },
+      { "id": "c", "text": "Spore formation" },
+      { "id": "d", "text": "Regeneration" }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Amoeba divides into two daughter cells by binary fission during favorable conditions.",
+    "marks": 1
+  },
+  {
+    "id": "sci-18",
+    "subjectId": "science",
+    "chapter": "Heredity",
+    "ncertRef": "Class 10 Science, Heredity",
+    "difficulty": "medium",
+    "prompt": "In humans, sex of a child is determined by the chromosome inherited from:",
+    "options": [
+      { "id": "a", "text": "The mother only" },
+      { "id": "b", "text": "The father" },
+      { "id": "c", "text": "Both parents equally" },
+      { "id": "d", "text": "Environmental temperature" }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Mothers always contribute an X chromosome. The sperm from the father carrying either X or Y determines female (XX) or male (XY).",
+    "marks": 1
+  },
+  {
+    "id": "sci-19",
+    "subjectId": "science",
+    "chapter": "Light — Reflection and Refraction",
+    "ncertRef": "Class 10 Science, Light",
+    "difficulty": "medium",
+    "prompt": "What is the power of a convex lens having a focal length of +50 cm?",
+    "options": [
+      { "id": "a", "text": "+2 D" },
+      { "id": "b", "text": "-2 D" },
+      { "id": "c", "text": "+0.5 D" },
+      { "id": "d", "text": "+5 D" }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Power P = 1 / f(in metres). 50 cm = 0.5 m. P = 1 / 0.5 = +2 Dioptres.",
+    "marks": 1
+  },
+  {
+    "id": "sci-20",
+    "subjectId": "science",
+    "chapter": "The Human Eye and the Colourful World",
+    "ncertRef": "Class 10 Science, Human Eye",
+    "difficulty": "medium",
+    "prompt": "The defect of vision in which a person cannot see distant objects clearly is corrected using a:",
+    "options": [
+      { "id": "a", "text": "Convex lens" },
+      { "id": "b", "text": "Concave lens" },
+      { "id": "c", "text": "Cylindrical lens" },
+      { "id": "d", "text": "Bifocal lens" }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Myopia (nearsightedness) causes rays from distant objects to focus in front of the retina; a concave lens diverges them onto the retina.",
+    "marks": 1
+  },
+  {
+    "id": "sci-21",
+    "subjectId": "science",
+    "chapter": "Electricity",
+    "ncertRef": "Class 10 Science, Electricity",
+    "difficulty": "medium",
+    "prompt": "If three resistors of 2 Ω, 3 Ω, and 6 Ω are connected in parallel, their equivalent resistance is:",
+    "options": [
+      { "id": "a", "text": "11 Ω" },
+      { "id": "b", "text": "1 Ω" },
+      { "id": "c", "text": "2 Ω" },
+      { "id": "d", "text": "0.5 Ω" }
+    ],
+    "correctOptionId": "b",
+    "explanation": "1/Rp = 1/2 + 1/3 + 1/6 = (3 + 2 + 1)/6 = 6/6 = 1. Therefore Rp = 1 Ω.",
+    "marks": 1
+  },
+  {
+    "id": "sci-22",
+    "subjectId": "science",
+    "chapter": "Magnetic Effects of Electric Current",
+    "ncertRef": "Class 10 Science, Magnetic Effects",
+    "difficulty": "medium",
+    "prompt": "According to Fleming's Left Hand Rule, the middle finger represents the direction of:",
+    "options": [
+      { "id": "a", "text": "Magnetic field" },
+      { "id": "b", "text": "Force / motion" },
+      { "id": "c", "text": "Electric current" },
+      { "id": "d", "text": "Induced electromotive force" }
+    ],
+    "correctOptionId": "c",
+    "explanation": "Thumb = Force/Motion, Forefinger = Field, Middle finger = Current.",
+    "marks": 1
+  },
+  {
+    "id": "sci-23",
+    "subjectId": "science",
+    "chapter": "Our Environment",
+    "ncertRef": "Class 10 Science, Our Environment",
+    "difficulty": "easy",
+    "prompt": "Which synthetic chemical is primarily responsible for the depletion of the stratospheric ozone layer?",
+    "options": [
+      { "id": "a", "text": "Carbon dioxide" },
+      { "id": "b", "text": "Chlorofluorocarbons (CFCs)" },
+      { "id": "c", "text": "Methane" },
+      { "id": "d", "text": "Sulphur dioxide" }
+    ],
+    "correctOptionId": "b",
+    "explanation": "CFCs release chlorine atoms upon UV irradiation, which break down ozone (O3) into oxygen.",
+    "marks": 1
+  },
+  {
+    "id": "sci-24",
+    "subjectId": "science",
+    "chapter": "Chemical Reactions and Equations",
+    "ncertRef": "Class 10 Science, Chemical Reactions",
+    "difficulty": "easy",
+    "prompt": "When lead nitrate powder is heated in a boiling tube, brown fumes of which gas are evolved?",
+    "options": [
+      { "id": "a", "text": "Nitrogen dioxide (NO2)" },
+      { "id": "b", "text": "Nitrous oxide (N2O)" },
+      { "id": "c", "text": "Oxygen (O2)" },
+      { "id": "d", "text": "Nitrogen gas (N2)" }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Heating 2Pb(NO3)2 gives 2PbO (yellow) + 4NO2 (brown fumes) + O2.",
+    "marks": 1
+  },
+  {
+    "id": "sci-25",
+    "subjectId": "science",
+    "chapter": "Life Processes",
+    "ncertRef": "Class 10 Science, Life Processes",
+    "difficulty": "medium",
+    "prompt": "The structural and functional unit of the human kidney is called a:",
+    "options": [
+      { "id": "a", "text": "Neuron" },
+      { "id": "b", "text": "Nephron" },
+      { "id": "c", "text": "Ureter" },
+      { "id": "d", "text": "Alveolus" }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Nephrons filter blood, reabsorb essential solutes and water, and form urine.",
+    "marks": 1
+  },
+  {
+    "id": "sci-26",
+    "subjectId": "science",
+    "chapter": "The Human Eye and the Colourful World",
+    "ncertRef": "Class 10 Science, Human Eye",
+    "difficulty": "easy",
+    "prompt": "Twinkling of stars at night is caused by:",
+    "options": [
+      { "id": "a", "text": "Atmospheric refraction of starlight" },
+      { "id": "b", "text": "Internal reflection inside raindrops" },
+      { "id": "c", "text": "Scattering by dust particles" },
+      { "id": "d", "text": "Dispersion of light in vacuum" }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Continual changes in the optical density and temperature of atmospheric air cause refraction variations, making stars appear to twinkle.",
+    "marks": 1
+  },
+  {
+    "id": "sci-27",
+    "subjectId": "science",
+    "chapter": "Acids, Bases and Salts",
+    "ncertRef": "Class 10 Science, Acids, Bases and Salts",
+    "difficulty": "easy",
+    "prompt": "Tooth decay starts when the pH of the mouth becomes lower than:",
+    "options": [
+      { "id": "a", "text": "7.0" },
+      { "id": "b", "text": "6.5" },
+      { "id": "c", "text": "5.5" },
+      { "id": "d", "text": "4.0" }
+    ],
+    "correctOptionId": "c",
+    "explanation": "Tooth enamel (calcium hydroxyapatite) begins to corrode when mouth pH falls below 5.5 due to acid-producing bacteria.",
+    "marks": 1
+  },
+  {
+    "id": "sci-28",
+    "subjectId": "science",
+    "chapter": "Metals and Non-metals",
+    "ncertRef": "Class 10 Science, Metals and Non-metals",
+    "difficulty": "medium",
+    "prompt": "An alloy composed of copper and zinc is called:",
+    "options": [
+      { "id": "a", "text": "Bronze" },
+      { "id": "b", "text": "Brass" },
+      { "id": "c", "text": "Solder" },
+      { "id": "d", "text": "Steel" }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Brass is an alloy of copper and zinc. (Bronze is copper and tin).",
+    "marks": 1
+  },
+  {
+    "id": "sci-29",
+    "subjectId": "science",
+    "chapter": "Electricity",
+    "ncertRef": "Class 10 Science, Electricity",
+    "difficulty": "medium",
+    "prompt": "The commercial unit of electrical energy is kilowatt-hour (kWh). 1 kWh is equal to:",
+    "options": [
+      { "id": "a", "text": "3.6 × 10⁶ Joules" },
+      { "id": "b", "text": "3.6 × 10⁵ Joules" },
+      { "id": "c", "text": "1000 Joules" },
+      { "id": "d", "text": "3600 Joules" }
+    ],
+    "correctOptionId": "a",
+    "explanation": "1 kWh = 1000 W × 3600 s = 3.6 × 10⁶ J.",
+    "marks": 1
+  },
+  {
+    "id": "sci-30",
+    "subjectId": "science",
+    "chapter": "Carbon and its Compounds",
+    "ncertRef": "Class 10 Science, Carbon and its Compounds",
+    "difficulty": "medium",
+    "prompt": "The reaction of an ester with sodium hydroxide to form soap and alcohol is known as:",
+    "options": [
+      { "id": "a", "text": "Esterification" },
+      { "id": "b", "text": "Saponification" },
+      { "id": "c", "text": "Hydrogenation" },
+      { "id": "d", "text": "Combustion" }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Alkaline hydrolysis of esters produces sodium salts of fatty acids (soaps) and is called saponification.",
+    "marks": 1
+  }
+]

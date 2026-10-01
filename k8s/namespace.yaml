@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: ncert10-quiz
+  labels:
+    app.kubernetes.io/name: ncert10-quiz
+    app.kubernetes.io/part-of: boardready

@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ncert10-quiz-config
+  namespace: ncert10-quiz
+data:
+  NODE_ENV: "production"
+  PORT: "3000"
+  NEXT_PUBLIC_APP_URL: "https://boardready.example.com"
+  LEADERBOARD_PATH: "/app/.data/leaderboard.json"

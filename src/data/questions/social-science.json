@@ -1,0 +1,512 @@
+[
+  {
+    "id": "sst-01",
+    "subjectId": "social-science",
+    "chapter": "The Rise of Nationalism in Europe",
+    "ncertRef": "Class 10 History, Rise of Nationalism in Europe",
+    "difficulty": "medium",
+    "prompt": "Who prepared a series of four prints visualising a world made up of 'democratic and social Republics'?",
+    "options": [
+      { "id": "a", "text": "Otto von Bismarck" },
+      { "id": "b", "text": "Giuseppe Mazzini" },
+      { "id": "c", "text": "Frédéric Sorrieu" },
+      { "id": "d", "text": "Napoleon Bonaparte" }
+    ],
+    "correctOptionId": "c",
+    "explanation": "Frédéric Sorrieu’s 1848 prints imagined a world of democratic and social republics.",
+    "marks": 1
+  },
+  {
+    "id": "sst-02",
+    "subjectId": "social-science",
+    "chapter": "Nationalism in India",
+    "ncertRef": "Class 10 History, Nationalism in India",
+    "difficulty": "easy",
+    "prompt": "The Non-Cooperation Movement was launched in:",
+    "options": [
+      { "id": "a", "text": "1915" },
+      { "id": "b", "text": "1920" },
+      { "id": "c", "text": "1930" },
+      { "id": "d", "text": "1942" }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Gandhiji launched Non-Cooperation in 1920 after the Rowlatt Act, Jallianwala Bagh, and Khilafat issues.",
+    "marks": 1
+  },
+  {
+    "id": "sst-03",
+    "subjectId": "social-science",
+    "chapter": "Resources and Development",
+    "ncertRef": "Class 10 Geography, Resources and Development",
+    "difficulty": "easy",
+    "prompt": "Resources which are found in a region but have not been utilised are called:",
+    "options": [
+      { "id": "a", "text": "Renewable resources" },
+      { "id": "b", "text": "Potential resources" },
+      { "id": "c", "text": "Stock" },
+      { "id": "d", "text": "Developed resources" }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Potential resources exist in a region but are not yet used, such as wind energy in Rajasthan before development.",
+    "marks": 1
+  },
+  {
+    "id": "sst-04",
+    "subjectId": "social-science",
+    "chapter": "Agriculture",
+    "ncertRef": "Class 10 Geography, Agriculture",
+    "difficulty": "medium",
+    "prompt": "Which is a rabi crop?",
+    "options": [
+      { "id": "a", "text": "Paddy" },
+      { "id": "b", "text": "Maize" },
+      { "id": "c", "text": "Wheat" },
+      { "id": "d", "text": "Jowar" }
+    ],
+    "correctOptionId": "c",
+    "explanation": "Wheat is sown in winter and harvested in spring — a classic rabi crop.",
+    "marks": 1
+  },
+  {
+    "id": "sst-05",
+    "subjectId": "social-science",
+    "chapter": "Power Sharing",
+    "ncertRef": "Class 10 Democratic Politics, Power Sharing",
+    "difficulty": "easy",
+    "prompt": "Power sharing is desirable because it:",
+    "options": [
+      { "id": "a", "text": "Makes one community dominant" },
+      { "id": "b", "text": "Reduces conflict and strengthens democracy" },
+      { "id": "c", "text": "Slows all government work forever" },
+      { "id": "d", "text": "Removes the need for elections" }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Sharing power among communities and organs of government reduces conflict and deepens democracy.",
+    "marks": 1
+  },
+  {
+    "id": "sst-06",
+    "subjectId": "social-science",
+    "chapter": "Federalism",
+    "ncertRef": "Class 10 Democratic Politics, Federalism",
+    "difficulty": "medium",
+    "prompt": "In a federation, the Constitution usually:",
+    "options": [
+      { "id": "a", "text": "Can be changed by the Centre alone easily" },
+      { "id": "b", "text": "Divides power between Union and State governments" },
+      { "id": "c", "text": "Gives all power to local bodies only" },
+      { "id": "d", "text": "Has no written form" }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Federalism constitutionally divides powers between levels of government.",
+    "marks": 1
+  },
+  {
+    "id": "sst-07",
+    "subjectId": "social-science",
+    "chapter": "Political Parties",
+    "ncertRef": "Class 10 Democratic Politics, Political Parties",
+    "difficulty": "easy",
+    "prompt": "A recognised political party must:",
+    "options": [
+      { "id": "a", "text": "Have a symbol allotted by the Election Commission" },
+      { "id": "b", "text": "Own a newspaper" },
+      { "id": "c", "text": "Be older than 50 years" },
+      { "id": "d", "text": "Have members in every village" }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Recognised parties get an official election symbol from the ECI and related privileges.",
+    "marks": 1
+  },
+  {
+    "id": "sst-08",
+    "subjectId": "social-science",
+    "chapter": "Development",
+    "ncertRef": "Class 10 Economics, Development",
+    "difficulty": "medium",
+    "prompt": "Which is a better indicator than average income alone for comparing development?",
+    "options": [
+      { "id": "a", "text": "Only total GDP" },
+      { "id": "b", "text": "BMI of a single person" },
+      { "id": "c", "text": "HDI-style mix: income, health, education" },
+      { "id": "d", "text": "Number of cars in a city" }
+    ],
+    "correctOptionId": "c",
+    "explanation": "Development is compared using income plus health and education measures, as in HDI.",
+    "marks": 1
+  },
+  {
+    "id": "sst-09",
+    "subjectId": "social-science",
+    "chapter": "Sectors of the Indian Economy",
+    "ncertRef": "Class 10 Economics, Sectors of the Indian Economy",
+    "difficulty": "easy",
+    "prompt": "A teacher in a government school is part of the:",
+    "options": [
+      { "id": "a", "text": "Primary sector and unorganised sector" },
+      { "id": "b", "text": "Secondary sector" },
+      { "id": "c", "text": "Tertiary and organised sector" },
+      { "id": "d", "text": "Primary organised sector" }
+    ],
+    "correctOptionId": "c",
+    "explanation": "Education is a service (tertiary). Government school jobs are organised-sector employment.",
+    "marks": 1
+  },
+  {
+    "id": "sst-10",
+    "subjectId": "social-science",
+    "chapter": "Money and Credit",
+    "ncertRef": "Class 10 Economics, Money and Credit",
+    "difficulty": "medium",
+    "prompt": "Which of the following is a formal source of credit?",
+    "options": [
+      { "id": "a", "text": "Moneylender" },
+      { "id": "b", "text": "Relative" },
+      { "id": "c", "text": "Commercial bank" },
+      { "id": "d", "text": "Landlord" }
+    ],
+    "correctOptionId": "c",
+    "explanation": "Banks and cooperatives are formal sources supervised by the RBI.",
+    "marks": 1
+  },
+  {
+    "id": "sst-11",
+    "subjectId": "social-science",
+    "chapter": "The Rise of Nationalism in Europe",
+    "ncertRef": "Class 10 History, Nationalism in Europe",
+    "difficulty": "medium",
+    "prompt": "The Civil Code of 1804 in France is popularly known as:",
+    "options": [
+      { "id": "a", "text": "The Napoleonic Code" },
+      { "id": "b", "text": "The Jacobin Code" },
+      { "id": "c", "text": "The Treaty of Vienna" },
+      { "id": "d", "text": "The Declaration of Rights" }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Napoleon established equality before the law and secured property rights in the Napoleonic Code of 1804.",
+    "marks": 1
+  },
+  {
+    "id": "sst-12",
+    "subjectId": "social-science",
+    "chapter": "Nationalism in India",
+    "ncertRef": "Class 10 History, Nationalism in India",
+    "difficulty": "easy",
+    "prompt": "Mahatma Gandhi broke the colonial salt law at Dandi in the year:",
+    "options": [
+      { "id": "a", "text": "1928" },
+      { "id": "b", "text": "1930" },
+      { "id": "c", "text": "1932" },
+      { "id": "d", "text": "1935" }
+    ],
+    "correctOptionId": "b",
+    "explanation": "The historic Dandi Salt March culminated on 6 April 1930, inaugurating the Civil Disobedience Movement.",
+    "marks": 1
+  },
+  {
+    "id": "sst-13",
+    "subjectId": "social-science",
+    "chapter": "Resources and Development",
+    "ncertRef": "Class 10 Geography, Resources and Development",
+    "difficulty": "easy",
+    "prompt": "Black soil is particularly ideal for the cultivation of:",
+    "options": [
+      { "id": "a", "text": "Jute" },
+      { "id": "b", "text": "Cotton" },
+      { "id": "c", "text": "Tea" },
+      { "id": "d", "text": "Coffee" }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Black soil, also known as regur soil, has high moisture retention and is famous for growing cotton.",
+    "marks": 1
+  },
+  {
+    "id": "sst-14",
+    "subjectId": "social-science",
+    "chapter": "Water Resources",
+    "ncertRef": "Class 10 Geography, Water Resources",
+    "difficulty": "medium",
+    "prompt": "The Hirakud Dam is built across which river in India?",
+    "options": [
+      { "id": "a", "text": "Mahanadi" },
+      { "id": "b", "text": "Ganga" },
+      { "id": "c", "text": "Narmada" },
+      { "id": "d", "text": "Krishna" }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Hirakud Dam in Odisha is constructed across the Mahanadi River.",
+    "marks": 1
+  },
+  {
+    "id": "sst-15",
+    "subjectId": "social-science",
+    "chapter": "Power Sharing",
+    "ncertRef": "Class 10 Democratic Politics, Power Sharing",
+    "difficulty": "medium",
+    "prompt": "Which system of power sharing is also known as a system of 'checks and balances'?",
+    "options": [
+      { "id": "a", "text": "Vertical division of power" },
+      { "id": "b", "text": "Horizontal division of power" },
+      { "id": "c", "text": "Community government" },
+      { "id": "d", "text": "Coalition government" }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Horizontal division between Legislature, Executive, and Judiciary ensures each organ checks the others, creating balance.",
+    "marks": 1
+  },
+  {
+    "id": "sst-16",
+    "subjectId": "social-science",
+    "chapter": "Federalism",
+    "ncertRef": "Class 10 Democratic Politics, Federalism",
+    "difficulty": "medium",
+    "prompt": "Subjects like Defence, Foreign Affairs, Banking, and Communications are part of the:",
+    "options": [
+      { "id": "a", "text": "State List" },
+      { "id": "b", "text": "Union List" },
+      { "id": "c", "text": "Concurrent List" },
+      { "id": "d", "text": "Residuary List" }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Subjects of national importance requiring uniform policy across the nation are placed in the Union List.",
+    "marks": 1
+  },
+  {
+    "id": "sst-17",
+    "subjectId": "social-science",
+    "chapter": "Gender, Religion and Caste",
+    "ncertRef": "Class 10 Democratic Politics, Gender, Religion and Caste",
+    "difficulty": "easy",
+    "prompt": "One-third of seats in local government bodies (Panchayats and Municipalities) in India are reserved for:",
+    "options": [
+      { "id": "a", "text": "Senior citizens" },
+      { "id": "b", "text": "Women" },
+      { "id": "c", "text": "Teachers" },
+      { "id": "d", "text": "Youth under 25" }
+    ],
+    "correctOptionId": "b",
+    "explanation": "By constitutional amendments in 1992, at least one-third of all seats in local bodies are reserved for women.",
+    "marks": 1
+  },
+  {
+    "id": "sst-18",
+    "subjectId": "social-science",
+    "chapter": "Political Parties",
+    "ncertRef": "Class 10 Democratic Politics, Political Parties",
+    "difficulty": "medium",
+    "prompt": "An alliance formed by several parties to contest elections and form government is called a:",
+    "options": [
+      { "id": "a", "text": "Opposition block" },
+      { "id": "b", "text": "Coalition" },
+      { "id": "c", "text": "Pressure group" },
+      { "id": "d", "text": "Bureaucracy" }
+    ],
+    "correctOptionId": "b",
+    "explanation": "When several parties join together in a multi-party system to contest and run government, it is a coalition.",
+    "marks": 1
+  },
+  {
+    "id": "sst-19",
+    "subjectId": "social-science",
+    "chapter": "Outcomes of Democracy",
+    "ncertRef": "Class 10 Democratic Politics, Outcomes of Democracy",
+    "difficulty": "easy",
+    "prompt": "A democratic government is fundamentally accountable to:",
+    "options": [
+      { "id": "a", "text": "The military" },
+      { "id": "b", "text": "The citizens" },
+      { "id": "c", "text": "Foreign investors" },
+      { "id": "d", "text": "Religious leaders" }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Democracy produces a government that is accountable to the citizens and responsive to their needs and expectations.",
+    "marks": 1
+  },
+  {
+    "id": "sst-20",
+    "subjectId": "social-science",
+    "chapter": "Development",
+    "ncertRef": "Class 10 Economics, Development",
+    "difficulty": "medium",
+    "prompt": "Infant Mortality Rate (IMR) indicates the number of children that die before the age of:",
+    "options": [
+      { "id": "a", "text": "One year" },
+      { "id": "b", "text": "Five years" },
+      { "id": "c", "text": "Six months" },
+      { "id": "d", "text": "Two years" }
+    ],
+    "correctOptionId": "a",
+    "explanation": "IMR measures deaths of children under 1 year of age per 1,000 live births in a given year.",
+    "marks": 1
+  },
+  {
+    "id": "sst-21",
+    "subjectId": "social-science",
+    "chapter": "Sectors of the Indian Economy",
+    "ncertRef": "Class 10 Economics, Sectors of the Indian Economy",
+    "difficulty": "medium",
+    "prompt": "Disguised unemployment is most commonly observed in which sector in India?",
+    "options": [
+      { "id": "a", "text": "Information Technology" },
+      { "id": "b", "text": "Agriculture" },
+      { "id": "c", "text": "Banking" },
+      { "id": "d", "text": "Aviation" }
+    ],
+    "correctOptionId": "b",
+    "explanation": "In Indian agriculture, more people work on a family farm than needed; if some are moved out, production is not affected.",
+    "marks": 1
+  },
+  {
+    "id": "sst-22",
+    "subjectId": "social-science",
+    "chapter": "Money and Credit",
+    "ncertRef": "Class 10 Economics, Money and Credit",
+    "difficulty": "medium",
+    "prompt": "An asset that the borrower owns and uses as a guarantee to a lender until the loan is repaid is called:",
+    "options": [
+      { "id": "a", "text": "Deposit" },
+      { "id": "b", "text": "Collateral" },
+      { "id": "c", "text": "Dividend" },
+      { "id": "d", "text": "Interest" }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Collateral is security (land, building, vehicle, bank deposit) that a lender can seize if borrower defaults.",
+    "marks": 1
+  },
+  {
+    "id": "sst-23",
+    "subjectId": "social-science",
+    "chapter": "Globalisation and the Indian Economy",
+    "ncertRef": "Class 10 Economics, Globalisation",
+    "difficulty": "easy",
+    "prompt": "A major multinational corporation (MNC) is an enterprise that:",
+    "options": [
+      { "id": "a", "text": "Produces goods only for local government schools" },
+      { "id": "b", "text": "Owns or controls production in more than one nation" },
+      { "id": "c", "text": "Operates without any profit motive" },
+      { "id": "d", "text": "Employs only family members" }
+    ],
+    "correctOptionId": "b",
+    "explanation": "An MNC owns or controls production of goods and services in more than one country.",
+    "marks": 1
+  },
+  {
+    "id": "sst-24",
+    "subjectId": "social-science",
+    "chapter": "Print Culture and the Modern World",
+    "ncertRef": "Class 10 History, Print Culture",
+    "difficulty": "medium",
+    "prompt": "Who developed the first known printing press with movable metal type in Strasbourg, Germany?",
+    "options": [
+      { "id": "a", "text": "Johann Gutenberg" },
+      { "id": "b", "text": "Martin Luther" },
+      { "id": "c", "text": "Erasmus" },
+      { "id": "d", "text": "Marco Polo" }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Johann Gutenberg developed the mechanical printing press around the 1430s.",
+    "marks": 1
+  },
+  {
+    "id": "sst-25",
+    "subjectId": "social-science",
+    "chapter": "Minerals and Energy Resources",
+    "ncertRef": "Class 10 Geography, Minerals and Energy",
+    "difficulty": "medium",
+    "prompt": "Which is the highest quality commercial coal with more than 80% carbon content?",
+    "options": [
+      { "id": "a", "text": "Peat" },
+      { "id": "b", "text": "Lignite" },
+      { "id": "c", "text": "Bituminous" },
+      { "id": "d", "text": "Anthracite" }
+    ],
+    "correctOptionId": "d",
+    "explanation": "Anthracite is the highest grade hard coal with the highest carbon concentration and heat output.",
+    "marks": 1
+  },
+  {
+    "id": "sst-26",
+    "subjectId": "social-science",
+    "chapter": "Manufacturing Industries",
+    "ncertRef": "Class 10 Geography, Manufacturing Industries",
+    "difficulty": "easy",
+    "prompt": "Which city is known as the electronic capital of India?",
+    "options": [
+      { "id": "a", "text": "Mumbai" },
+      { "id": "b", "text": "Bengaluru" },
+      { "id": "c", "text": "Hyderabad" },
+      { "id": "d", "text": "Chennai" }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Bengaluru has emerged as the electronic and IT capital of India.",
+    "marks": 1
+  },
+  {
+    "id": "sst-27",
+    "subjectId": "social-science",
+    "chapter": "The Making of a Global World",
+    "ncertRef": "Class 10 History, Making of a Global World",
+    "difficulty": "medium",
+    "prompt": "The Rinderpest cattle plague devastated livelihoods in the 1890s in which continent?",
+    "options": [
+      { "id": "a", "text": "Asia" },
+      { "id": "b", "text": "Africa" },
+      { "id": "c", "text": "South America" },
+      { "id": "d", "text": "Australia" }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Rinderpest spread rapidly through Africa in the late 1890s, killing 90% of cattle and transforming the economy.",
+    "marks": 1
+  },
+  {
+    "id": "sst-28",
+    "subjectId": "social-science",
+    "chapter": "Forest and Wildlife Resources",
+    "ncertRef": "Class 10 Geography, Forest and Wildlife",
+    "difficulty": "medium",
+    "prompt": "Bhairondev Dakav 'Sonchuri' declared by villagers of Alwar district in Rajasthan is an example of:",
+    "options": [
+      { "id": "a", "text": "Community-led forest and wildlife conservation" },
+      { "id": "b", "text": "Commercial timber mining" },
+      { "id": "c", "text": "Hydroelectric dam project" },
+      { "id": "d", "text": "Government wildlife sanctuary" }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Villagers of five villages in Alwar declared 1,200 hectares of forest as Bhairondev Dakav 'Sonchuri' with their own rules protecting wildlife.",
+    "marks": 1
+  },
+  {
+    "id": "sst-29",
+    "subjectId": "social-science",
+    "chapter": "Money and Credit",
+    "ncertRef": "Class 10 Economics, Money and Credit",
+    "difficulty": "easy",
+    "prompt": "Which central authority in India issues currency notes on behalf of the Central Government?",
+    "options": [
+      { "id": "a", "text": "State Bank of India" },
+      { "id": "b", "text": "Reserve Bank of India" },
+      { "id": "c", "text": "Ministry of Finance alone" },
+      { "id": "d", "text": "NITI Aayog" }
+    ],
+    "correctOptionId": "b",
+    "explanation": "In India, the Reserve Bank of India (RBI) issues currency notes on behalf of the central government.",
+    "marks": 1
+  },
+  {
+    "id": "sst-30",
+    "subjectId": "social-science",
+    "chapter": "Lifelines of National Economy",
+    "ncertRef": "Class 10 Geography, Lifelines of National Economy",
+    "difficulty": "medium",
+    "prompt": "The Golden Quadrilateral Super Highways project is implemented and maintained by:",
+    "options": [
+      { "id": "a", "text": "State PWD" },
+      { "id": "b", "text": "NHAI (National Highways Authority of India)" },
+      { "id": "c", "text": "BRO (Border Roads Organisation)" },
+      { "id": "d", "text": "Indian Railways" }
+    ],
+    "correctOptionId": "b",
+    "explanation": "NHAI is responsible for implementing the Golden Quadrilateral connecting Delhi-Mumbai-Chennai-Kolkata.",
+    "marks": 1
+  }
+]

@@ -1,0 +1,31 @@
+# Staging Environment Helm Values
+replicaCount: 2
+
+env:
+  NODE_ENV: production
+  PORT: 3000
+  NEXT_PUBLIC_APP_URL: https://staging.boardready.example.com
+
+ingress:
+  hosts:
+    - host: staging.boardready.example.com
+      paths:
+        - path: /
+          pathType: Prefix
+  tls:
+    - secretName: staging-boardready-tls
+      hosts:
+        - staging.boardready.example.com
+
+autoscaling:
+  enabled: true
+  minReplicas: 2
+  maxReplicas: 5
+
+resources:
+  limits:
+    cpu: 500m
+    memory: 512Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi

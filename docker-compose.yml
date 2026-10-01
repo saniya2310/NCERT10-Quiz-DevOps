@@ -1,0 +1,29 @@
+services:
+  web:
+    build: .
+    image: ncert10-quiz:latest
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: production
+      PORT: 3000
+      NEXT_PUBLIC_APP_URL: http://localhost:3000
+      LEADERBOARD_PATH: /app/.data/leaderboard.json
+    volumes:
+      - quiz-data:/app/.data
+    networks:
+      - quiz-net
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://127.0.0.1:3000/api/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
+    restart: unless-stopped
+
+volumes:
+  quiz-data:
+
+networks:
+  quiz-net:
+    driver: bridge

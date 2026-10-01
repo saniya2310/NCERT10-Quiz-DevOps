@@ -1,0 +1,33 @@
+# Production Environment Helm Values
+replicaCount: 3
+
+env:
+  NODE_ENV: production
+  PORT: 3000
+  NEXT_PUBLIC_APP_URL: https://boardready.example.com
+
+ingress:
+  hosts:
+    - host: boardready.example.com
+      paths:
+        - path: /
+          pathType: Prefix
+  tls:
+    - secretName: prod-boardready-tls
+      hosts:
+        - boardready.example.com
+
+autoscaling:
+  enabled: true
+  minReplicas: 3
+  maxReplicas: 20
+  targetCPUUtilizationPercentage: 65
+  targetMemoryUtilizationPercentage: 75
+
+resources:
+  limits:
+    cpu: 1000m
+    memory: 1024Mi
+  requests:
+    cpu: 200m
+    memory: 256Mi

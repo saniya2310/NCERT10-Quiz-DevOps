@@ -1,0 +1,512 @@
+[
+  {
+    "id": "eng-01",
+    "subjectId": "english",
+    "chapter": "Grammar — Tenses",
+    "ncertRef": "Class 10 English, Grammar",
+    "difficulty": "easy",
+    "prompt": "Choose the correct form: By next March, she _____ her board exams.",
+    "options": [
+      { "id": "a", "text": "completes" },
+      { "id": "b", "text": "will have completed" },
+      { "id": "c", "text": "completed" },
+      { "id": "d", "text": "was completing" }
+    ],
+    "correctOptionId": "b",
+    "explanation": "A completed action before a future time uses the future perfect: will have completed.",
+    "marks": 1
+  },
+  {
+    "id": "eng-02",
+    "subjectId": "english",
+    "chapter": "Grammar — Modals",
+    "ncertRef": "Class 10 English, Grammar",
+    "difficulty": "easy",
+    "prompt": "You _____ wear a helmet. It’s the rule.",
+    "options": [
+      { "id": "a", "text": "might" },
+      { "id": "b", "text": "must" },
+      { "id": "c", "text": "could" },
+      { "id": "d", "text": "used to" }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Must expresses obligation or a strong rule.",
+    "marks": 1
+  },
+  {
+    "id": "eng-03",
+    "subjectId": "english",
+    "chapter": "First Flight — A Letter to God",
+    "ncertRef": "Class 10 English, First Flight",
+    "difficulty": "medium",
+    "prompt": "Lencho’s unshaken faith is mainly shown when he:",
+    "options": [
+      { "id": "a", "text": "Sells his house" },
+      { "id": "b", "text": "Writes to God for help after the hailstorm" },
+      { "id": "c", "text": "Leaves the village forever" },
+      { "id": "d", "text": "Joins the post office" }
+    ],
+    "correctOptionId": "b",
+    "explanation": "After hail destroys the crop, Lencho writes to God asking for money — the core of the story.",
+    "marks": 1
+  },
+  {
+    "id": "eng-04",
+    "subjectId": "english",
+    "chapter": "First Flight — Nelson Mandela",
+    "ncertRef": "Class 10 English, First Flight",
+    "difficulty": "medium",
+    "prompt": "Mandela says the oppressor and the oppressed both are robbed of:",
+    "options": [
+      { "id": "a", "text": "Wealth only" },
+      { "id": "b", "text": "Their humanity" },
+      { "id": "c", "text": "Education certificates" },
+      { "id": "d", "text": "Military power" }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Mandela argues apartheid dehumanises both the oppressed and the oppressor.",
+    "marks": 1
+  },
+  {
+    "id": "eng-05",
+    "subjectId": "english",
+    "chapter": "Poetry — Dust of Snow",
+    "ncertRef": "Class 10 English, First Flight Poems",
+    "difficulty": "easy",
+    "prompt": "In 'Dust of Snow', the crow and hemlock together:",
+    "options": [
+      { "id": "a", "text": "Worsen the poet’s mood" },
+      { "id": "b", "text": "Change a sad mood into a lighter one" },
+      { "id": "c", "text": "Cause a snowstorm" },
+      { "id": "d", "text": "Symbolise only death" }
+    ],
+    "correctOptionId": "b",
+    "explanation": "A simple moment — snow dust from a hemlock shaken by a crow — lifts the poet’s mood.",
+    "marks": 1
+  },
+  {
+    "id": "eng-06",
+    "subjectId": "english",
+    "chapter": "Footprints — A Triumph of Surgery",
+    "ncertRef": "Class 10 English, Footprints Without Feet",
+    "difficulty": "easy",
+    "prompt": "Tricki’s illness was mainly due to:",
+    "options": [
+      { "id": "a", "text": "A rare infection" },
+      { "id": "b", "text": "Overfeeding and lack of exercise" },
+      { "id": "c", "text": "A broken bone" },
+      { "id": "d", "text": "Cold weather only" }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Mrs Pumphrey overfeeds Tricki; the 'cure' is controlled diet and activity.",
+    "marks": 1
+  },
+  {
+    "id": "eng-07",
+    "subjectId": "english",
+    "chapter": "Writing — Letter",
+    "ncertRef": "Class 10 English, Writing Skills",
+    "difficulty": "easy",
+    "prompt": "A letter to the Municipal Commissioner about garbage is a:",
+    "options": [
+      { "id": "a", "text": "Informal friendly letter" },
+      { "id": "b", "text": "Formal letter of complaint / request" },
+      { "id": "c", "text": "Diary entry" },
+      { "id": "d", "text": "Story" }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Official issues use a formal letter with proper sender, receiver, subject, and closing.",
+    "marks": 1
+  },
+  {
+    "id": "eng-08",
+    "subjectId": "english",
+    "chapter": "Grammar — Reported Speech",
+    "ncertRef": "Class 10 English, Grammar",
+    "difficulty": "medium",
+    "prompt": "Direct: She said, \"I am tired.\" Reported form:",
+    "options": [
+      { "id": "a", "text": "She said that she is tired." },
+      { "id": "b", "text": "She said that she was tired." },
+      { "id": "c", "text": "She said that I was tired." },
+      { "id": "d", "text": "She said that she were tired." }
+    ],
+    "correctOptionId": "b",
+    "explanation": "In reported speech, present simple usually shifts to past simple: am → was, and I → she.",
+    "marks": 1
+  },
+  {
+    "id": "eng-09",
+    "subjectId": "english",
+    "chapter": "Poetry — Fire and Ice",
+    "ncertRef": "Class 10 English, First Flight Poems",
+    "difficulty": "medium",
+    "prompt": "In Frost’s 'Fire and Ice', fire is commonly read as a symbol of:",
+    "options": [
+      { "id": "a", "text": "Desire / passion" },
+      { "id": "b", "text": "Winter sports" },
+      { "id": "c", "text": "Farming" },
+      { "id": "d", "text": "Friendship" }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Fire is linked to desire; ice is linked to hatred — two forces that can destroy.",
+    "marks": 1
+  },
+  {
+    "id": "eng-10",
+    "subjectId": "english",
+    "chapter": "Reading — Inference",
+    "ncertRef": "Class 10 English, Reading",
+    "difficulty": "medium",
+    "prompt": "If a passage says 'the library lights stayed on long after closing', a fair inference is:",
+    "options": [
+      { "id": "a", "text": "Someone was still working or present inside" },
+      { "id": "b", "text": "The building was demolished" },
+      { "id": "c", "text": "There was definitely a fire" },
+      { "id": "d", "text": "Libraries never close" }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Inference uses given clues without jumping to extreme conclusions. Lights after closing suggest activity inside.",
+    "marks": 1
+  },
+  {
+    "id": "eng-11",
+    "subjectId": "english",
+    "chapter": "First Flight — Two Stories About Flying",
+    "ncertRef": "Class 10 English, First Flight",
+    "difficulty": "easy",
+    "prompt": "What compelled the young seagull to take his very first flight?",
+    "options": [
+      { "id": "a", "text": "The sight of food and extreme hunger" },
+      { "id": "b", "text": "A strong storm that blew him away" },
+      { "id": "c", "text": "His father pushing him off the ledge" },
+      { "id": "d", "text": "An attacking eagle" }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Maddened by hunger, the young seagull dived at the fish held by his mother, forcing his wings outward.",
+    "marks": 1
+  },
+  {
+    "id": "eng-12",
+    "subjectId": "english",
+    "chapter": "First Flight — From the Diary of Anne Frank",
+    "ncertRef": "Class 10 English, First Flight",
+    "difficulty": "easy",
+    "prompt": "What was the name Anne Frank gave to her cherished diary?",
+    "options": [
+      { "id": "a", "text": "Margot" },
+      { "id": "b", "text": "Kitty" },
+      { "id": "c", "text": "Sancho" },
+      { "id": "d", "text": "Peter" }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Anne Frank named her diary 'Kitty' and wrote entries addressing it like an intimate friend.",
+    "marks": 1
+  },
+  {
+    "id": "eng-13",
+    "subjectId": "english",
+    "chapter": "First Flight — Glimpses of India",
+    "ncertRef": "Class 10 English, First Flight",
+    "difficulty": "medium",
+    "prompt": "In Goa, a traditional village baker is affectionately known as a:",
+    "options": [
+      { "id": "a", "text": "Pader" },
+      { "id": "b", "text": "Kabai" },
+      { "id": "c", "text": "Kuppia" },
+      { "id": "d", "text": "Boleiro" }
+    ],
+    "correctOptionId": "a",
+    "explanation": "The traditional Goan bakers are even today known as pader.",
+    "marks": 1
+  },
+  {
+    "id": "eng-14",
+    "subjectId": "english",
+    "chapter": "First Flight — Madam Rides the Bus",
+    "ncertRef": "Class 10 English, First Flight",
+    "difficulty": "medium",
+    "prompt": "What was Valli's deepest and strongest desire?",
+    "options": [
+      { "id": "a", "text": "To buy a pair of fancy shoes" },
+      { "id": "b", "text": "To ride on the bus that travelled between her village and the town" },
+      { "id": "c", "text": "To visit her grandmother in the city" },
+      { "id": "d", "text": "To attend the annual carnival" }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Eight-year-old Valliammai's overwhelming wish was to ride the bus to town and back.",
+    "marks": 1
+  },
+  {
+    "id": "eng-15",
+    "subjectId": "english",
+    "chapter": "First Flight — The Sermon at Benares",
+    "ncertRef": "Class 10 English, First Flight",
+    "difficulty": "medium",
+    "prompt": "What did the Buddha ask Kisa Gotami to bring from a house where no one had ever died?",
+    "options": [
+      { "id": "a", "text": "A handful of mustard seeds" },
+      { "id": "b", "text": "A bowl of sacred water" },
+      { "id": "c", "text": "A white lotus" },
+      { "id": "d", "text": "A grain of wheat" }
+    ],
+    "correctOptionId": "a",
+    "explanation": "The Buddha instructed Kisa Gotami to procure mustard seeds from a home untouched by death to help her realize mortality is universal.",
+    "marks": 1
+  },
+  {
+    "id": "eng-16",
+    "subjectId": "english",
+    "chapter": "Poetry — A Tiger in the Zoo",
+    "ncertRef": "Class 10 English, First Flight Poems",
+    "difficulty": "medium",
+    "prompt": "In the poem 'A Tiger in the Zoo', the poet contrasts the tiger in a cage with:",
+    "options": [
+      { "id": "a", "text": "A circus tiger" },
+      { "id": "b", "text": "The tiger in its natural jungle habitat" },
+      { "id": "c", "text": "Other wild predators" },
+      { "id": "d", "text": "Domestic cats" }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Leslie Norris contrasts the suppressed, pacing tiger in the concrete cell with the stalking tiger in the wild jungle.",
+    "marks": 1
+  },
+  {
+    "id": "eng-17",
+    "subjectId": "english",
+    "chapter": "Poetry — Amanda!",
+    "ncertRef": "Class 10 English, First Flight Poems",
+    "difficulty": "easy",
+    "prompt": "In Robin Klein's poem 'Amanda!', what does Amanda imagine herself to be to escape constant nagging?",
+    "options": [
+      { "id": "a", "text": "A mermaid, an orphan, and Rapunzel" },
+      { "id": "b", "text": "A princess with many servants" },
+      { "id": "c", "text": "A pilot flying above the clouds" },
+      { "id": "d", "text": "A school teacher" }
+    ],
+    "correctOptionId": "a",
+    "explanation": "In her daydreams, Amanda imagines drifting alone as a mermaid, roaming freely as an orphan, and living serenely as Rapunzel.",
+    "marks": 1
+  },
+  {
+    "id": "eng-18",
+    "subjectId": "english",
+    "chapter": "Footprints — The Thief's Story",
+    "ncertRef": "Class 10 English, Footprints Without Feet",
+    "difficulty": "medium",
+    "prompt": "What made Hari Singh return to Anil after stealing the money?",
+    "options": [
+      { "id": "a", "text": "Fear of the police" },
+      { "id": "b", "text": "Anil's trust and the desire to learn how to read and write sentences" },
+      { "id": "c", "text": "He missed his train permanently" },
+      { "id": "d", "text": "The money was stolen by someone else" }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Hari realized education and Anil's genuine trust would bring him far more dignity and respect than petty theft.",
+    "marks": 1
+  },
+  {
+    "id": "eng-19",
+    "subjectId": "english",
+    "chapter": "Footprints — The Necklace",
+    "ncertRef": "Class 10 English, Footprints Without Feet",
+    "difficulty": "medium",
+    "prompt": "At the end of Guy de Maupassant's story 'The Necklace', Madame Forestier reveals that the lost necklace was:",
+    "options": [
+      { "id": "a", "text": "Real diamonds worth 40,000 francs" },
+      { "id": "b", "text": "An imitation paste worth at most 500 francs" },
+      { "id": "c", "text": "Stolen by a servant" },
+      { "id": "d", "text": "Returned anonymously" }
+    ],
+    "correctOptionId": "b",
+    "explanation": "The tragic irony of the story is that the original necklace was fake costume jewelry worth only 500 francs.",
+    "marks": 1
+  },
+  {
+    "id": "eng-20",
+    "subjectId": "english",
+    "chapter": "Footprints — Bholi",
+    "ncertRef": "Class 10 English, Footprints Without Feet",
+    "difficulty": "easy",
+    "prompt": "Why did Bholi refuse to marry Bishamber Nath at the wedding ceremony?",
+    "options": [
+      { "id": "a", "text": "He demanded five thousand rupees as dowry after seeing her pockmarks" },
+      { "id": "b", "text": "She wanted to move to a big city alone" },
+      { "id": "c", "text": "He was too poor" },
+      { "id": "d", "text": "Her father forbade the marriage" }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Bholi boldly rejected the greedy, callous groom who demeaned her father and demanded 5,000 rupees as dowry.",
+    "marks": 1
+  },
+  {
+    "id": "eng-21",
+    "subjectId": "english",
+    "chapter": "Grammar — Subject-Verb Concord",
+    "ncertRef": "Class 10 English, Grammar",
+    "difficulty": "medium",
+    "prompt": "Neither the teacher nor the students _____ present in the auditorium.",
+    "options": [
+      { "id": "a", "text": "was" },
+      { "id": "b", "text": "were" },
+      { "id": "c", "text": "is" },
+      { "id": "d", "text": "has been" }
+    ],
+    "correctOptionId": "b",
+    "explanation": "When subjects are joined by 'neither... nor', the verb agrees with the closer subject. 'Students' is plural, so 'were' is correct.",
+    "marks": 1
+  },
+  {
+    "id": "eng-22",
+    "subjectId": "english",
+    "chapter": "Grammar — Determiners",
+    "ncertRef": "Class 10 English, Grammar",
+    "difficulty": "medium",
+    "prompt": "There was _____ milk left in the jug, so we could not prepare tea for everyone.",
+    "options": [
+      { "id": "a", "text": "a little" },
+      { "id": "b", "text": "little" },
+      { "id": "c", "text": "few" },
+      { "id": "d", "text": "a few" }
+    ],
+    "correctOptionId": "b",
+    "explanation": "'Little' has a negative meaning (almost none) and is used with uncountable nouns like milk.",
+    "marks": 1
+  },
+  {
+    "id": "eng-23",
+    "subjectId": "english",
+    "chapter": "Grammar — Reported Speech",
+    "ncertRef": "Class 10 English, Grammar",
+    "difficulty": "medium",
+    "prompt": "Direct: The teacher said to Rohan, \"Why are you late today?\" Reported form:",
+    "options": [
+      { "id": "a", "text": "The teacher asked Rohan why he was late that day." },
+      { "id": "b", "text": "The teacher asked Rohan that why was he late today." },
+      { "id": "c", "text": "The teacher told Rohan why he is late." },
+      { "id": "d", "text": "The teacher asked Rohan why were you late." }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Wh-questions do not use 'that'; word order becomes assertive (subject before verb: why he was...), and 'today' changes to 'that day'.",
+    "marks": 1
+  },
+  {
+    "id": "eng-24",
+    "subjectId": "english",
+    "chapter": "First Flight — The Proposal",
+    "ncertRef": "Class 10 English, First Flight",
+    "difficulty": "medium",
+    "prompt": "In Anton Chekhov's play 'The Proposal', Lomov and Natalya start arguing heatedly about the ownership of:",
+    "options": [
+      { "id": "a", "text": "Oxen Meadows" },
+      { "id": "b", "text": "Birch Woods" },
+      { "id": "c", "text": "Burnt Marsh" },
+      { "id": "d", "text": "The Manor House" }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Lomov came to propose marriage, but a petty feud broke out immediately over whether the Oxen Meadows belonged to the Lomovs or Chubukovs.",
+    "marks": 1
+  },
+  {
+    "id": "eng-25",
+    "subjectId": "english",
+    "chapter": "Footprints — The Midnight Visitor",
+    "ncertRef": "Class 10 English, Footprints Without Feet",
+    "difficulty": "medium",
+    "prompt": "How did secret agent Ausable outwit Max without firing a single bullet?",
+    "options": [
+      { "id": "a", "text": "By calling the hotel guards with a secret alarm" },
+      { "id": "b", "text": "By inventing a fictitious balcony under the window" },
+      { "id": "c", "text": "By poisoning his drink" },
+      { "id": "d", "text": "By wrestling him to the ground" }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Ausable fabricated a convincing story about a non-existent balcony, causing panicked Max to jump out of the window to his fall.",
+    "marks": 1
+  },
+  {
+    "id": "eng-26",
+    "subjectId": "english",
+    "chapter": "Poetry — The Ball Poem",
+    "ncertRef": "Class 10 English, First Flight Poems",
+    "difficulty": "medium",
+    "prompt": "In John Berryman's 'The Ball Poem', the loss of the ball symbolizes the boy's:",
+    "options": [
+      { "id": "a", "text": "Carelessness in games" },
+      { "id": "b", "text": "First confrontation with loss and the responsibility of growing up" },
+      { "id": "c", "text": "Desire for new expensive toys" },
+      { "id": "d", "text": "Fear of deep water" }
+    ],
+    "correctOptionId": "b",
+    "explanation": "The ball represents childhood innocence; its loss teaches the young boy the epistemology of loss in a world of possessions.",
+    "marks": 1
+  },
+  {
+    "id": "eng-27",
+    "subjectId": "english",
+    "chapter": "Writing — Analytical Paragraph",
+    "ncertRef": "Class 10 English, Writing Skills",
+    "difficulty": "easy",
+    "prompt": "An analytical paragraph written for a chart or graph should be:",
+    "options": [
+      { "id": "a", "text": "Objective, concise, and focused on key trends with data comparisons" },
+      { "id": "b", "text": "A fictional adventure story based on characters" },
+      { "id": "c", "text": "An informal letter to a relative" },
+      { "id": "d", "text": "A poem with rhyming couplets" }
+    ],
+    "correctOptionId": "a",
+    "explanation": "Analytical paragraphs interpret visual data objectively using precise comparative vocabulary, highlighting highs, lows, and trends.",
+    "marks": 1
+  },
+  {
+    "id": "eng-28",
+    "subjectId": "english",
+    "chapter": "Grammar — Modals",
+    "ncertRef": "Class 10 English, Grammar",
+    "difficulty": "easy",
+    "prompt": "_____ God grant you success in your board examinations!",
+    "options": [
+      { "id": "a", "text": "Can" },
+      { "id": "b", "text": "May" },
+      { "id": "c", "text": "Must" },
+      { "id": "d", "text": "Shall" }
+    ],
+    "correctOptionId": "b",
+    "explanation": "The modal auxiliary 'May' is standardly used to express wishes, prayers, and blessings in optative sentences.",
+    "marks": 1
+  },
+  {
+    "id": "eng-29",
+    "subjectId": "english",
+    "chapter": "Footprints — The Making of a Scientist",
+    "ncertRef": "Class 10 English, Footprints Without Feet",
+    "difficulty": "easy",
+    "prompt": "Which book opened the world of science to young Richard Ebright?",
+    "options": [
+      { "id": "a", "text": "The Travels of Monarch X" },
+      { "id": "b", "text": "The Origin of Species" },
+      { "id": "c", "text": "A Brief History of Time" },
+      { "id": "d", "text": "Silent Spring" }
+    ],
+    "correctOptionId": "a",
+    "explanation": "'The Travels of Monarch X' by Dr. Urquhart inspired Ebright to study monarch butterfly migration and launched his scientific journey.",
+    "marks": 1
+  },
+  {
+    "id": "eng-30",
+    "subjectId": "english",
+    "chapter": "Reading — Inference",
+    "ncertRef": "Class 10 English, Reading",
+    "difficulty": "medium",
+    "prompt": "Identify the figure of speech: 'The trees inside are moving out into the forest.'",
+    "options": [
+      { "id": "a", "text": "Personification" },
+      { "id": "b", "text": "Simile" },
+      { "id": "c", "text": "Oxymoron" },
+      { "id": "d", "text": "Hyperbole" }
+    ],
+    "correctOptionId": "a",
+    "explanation": "In Adrienne Rich's poem, giving human action (moving out, striving) to inanimate trees is an example of Personification.",
+    "marks": 1
+  }
+]
