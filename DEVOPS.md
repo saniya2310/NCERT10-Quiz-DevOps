@@ -105,8 +105,8 @@ docker compose -f docker-compose.yml -f docker-compose.monitoring.yml up -d
 ```
 
 #### Monitoring Access Endpoints:
-* **Web Application:** `http://localhost:3000`
-* **Metrics Endpoint:** `http://localhost:3000/api/metrics`
+* **Web Application:** `http://localhost:3001`
+* **Metrics Endpoint:** `http://localhost:3001/api/metrics`
 * **Prometheus UI:** `http://localhost:9090`
 * **Grafana Dashboard:** `http://localhost:3002` (Login: `admin` / `admin`)
   * Pre-loaded dashboard: **BoardReady - Production Observability** (Uptime, heap memory, score distribution, question count by subject).
