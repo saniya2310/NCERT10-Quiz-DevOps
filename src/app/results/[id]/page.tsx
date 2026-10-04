@@ -14,7 +14,7 @@ export const dynamic = "force-dynamic";
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { id } = await params;
-  const attempt = getAttempt(id);
+  const attempt = await getAttempt(id);
   if (!attempt) return { title: "Result" };
   return {
     title: `${attempt.percent}% for ${attempt.nickname}`,
@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function ResultPage({ params }: Props) {
   const { id } = await params;
-  const attempt = getAttempt(id);
+  const attempt = await getAttempt(id);
   if (!attempt) notFound();
   const subject = getSubject(attempt.subjectId);
   const subjectName = subject?.name ?? (attempt.daily ? "Daily mix" : attempt.subjectId);

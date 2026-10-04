@@ -22,7 +22,7 @@ export async function POST(req: NextRequest) {
 
   const scored = scoreAttempt(questions, answers);
   const subject = getSubject(subjectId);
-  const result = saveAttempt({
+  const result = await saveAttempt({
     id: crypto.randomUUID(),
     nickname,
     subjectId,

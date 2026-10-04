@@ -1,14 +1,29 @@
-output "alb_dns_name" {
-  description = "The public DNS name of the Application Load Balancer"
-  value       = aws_lb.main.dns_name
+output "ec2_public_ip" {
+  description = "The public IPv4 address of the EC2 DevOps Host"
+  value       = aws_instance.devops_node.public_ip
 }
 
-output "ecs_cluster_name" {
-  description = "The name of the ECS cluster"
-  value       = aws_ecs_cluster.main.name
+output "quiz_app_url" {
+  description = "The public web link to access the NCERT Class 10 Quiz Platform"
+  value       = "http://${aws_instance.devops_node.public_ip}"
 }
 
-output "ecs_service_name" {
-  description = "The name of the ECS service"
-  value       = aws_ecs_service.main.name
+output "jenkins_url" {
+  description = "The direct web link to access the Jenkins CI/CD Dashboard"
+  value       = "http://${aws_instance.devops_node.public_ip}:8080"
+}
+
+output "s3_artifacts_bucket" {
+  description = "The Amazon S3 bucket storing Jenkins pipeline build artifacts and reports"
+  value       = aws_s3_bucket.artifacts.id
+}
+
+output "dynamodb_attempts_table" {
+  description = "The DynamoDB table storing student quiz attempts"
+  value       = aws_dynamodb_table.attempts.name
+}
+
+output "dynamodb_leaderboard_table" {
+  description = "The DynamoDB table storing global & subject leaderboard scores"
+  value       = aws_dynamodb_table.leaderboard.name
 }

@@ -6,5 +6,7 @@ metadata:
 data:
   NODE_ENV: "production"
   PORT: "3000"
-  NEXT_PUBLIC_APP_URL: "https://boardready.example.com"
+  AWS_REGION: "eu-north-1"
+  DYNAMODB_TABLE_ATTEMPTS: "ncert10-quiz-dev-attempts"
+  DYNAMODB_TABLE_LEADERBOARD: "ncert10-quiz-dev-leaderboard"
   LEADERBOARD_PATH: "/app/.data/leaderboard.json"

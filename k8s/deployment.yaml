@@ -34,7 +34,7 @@ spec:
         fsGroup: 10001
       containers:
         - name: web
-          image: ghcr.io/your-org/ncert10-quiz:latest
+          image: ncert10-quiz:latest
           imagePullPolicy: IfNotPresent
           securityContext:
             allowPrivilegeEscalation: false

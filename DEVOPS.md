@@ -1,259 +1,164 @@
 # BoardReady (ncert10-quiz) — Enterprise DevOps Architecture & Guide
 
-This document outlines the complete DevOps implementation for the **BoardReady NCERT Class 10 Quiz** platform. It covers containerization, multi-environment lifecycles, CI/CD with GitHub Actions & Jenkins, Infrastructure as Code (Terraform for AWS ECS), Kubernetes (Helm & manifests), Observability (Prometheus + Grafana), and DevSecOps.
+This project implements the industry-standard, classic enterprise DevOps stack:
+
+$$\text{Terraform} \implies \text{AWS EC2} \implies \text{AWS S3} \implies \text{Docker} \implies \text{Kubernetes} \implies \text{Jenkins}$$
 
 ---
 
-## 1. High-Level Architecture Diagram
+## 1. High-Level Enterprise Architecture
 
-```
-                       DEVELOPER WORKFLOW
-                 git commit & push to GitHub
-                             │
-            ┌────────────────┴────────────────┐
-            ▼                                 ▼
-   [ GitHub Actions CI ]              [ Jenkins CI/CD ]
-   • Question Bank Validator          • Declarative Pipeline
-   • ESLint & TypeScript Checks       • Multi-stage Build & Test
-   • Trivy CVE File Scan              • Trivy Container Scan
-   • Gitleaks Secret Detection        • Auto-publish to GHCR
-   • Multi-stage Docker Build         • Staging & Prod Helm Deploy
-            │
-            ▼
-   [ GitHub Container Registry (GHCR) ]
-   Images tagged: latest, <semver>, sha-<commit>
-            │
-            ├─────────────────────────────────────────────┐
-            ▼                                             ▼
-  [ Kubernetes / Helm Cluster ]                 [ AWS ECS Fargate ]
-  • Helm Charts (dev, staging, prod)            • Terraform Managed VPC
-  • Rolling Update Deployment                   • Application Load Balancer
-  • Horizontal Pod Autoscaler (HPA)             • Fargate Task Definition
-  • Ingress + TLS (Cert-Manager)                • AutoScaling (Target Tracking)
-  • Persistent Volume Claim (PVC)               • CloudWatch Container Logs
-            │                                             │
-            └──────────────────────┬──────────────────────┘
-                                   ▼
-                   [ Observability & Monitoring ]
-                   • Prometheus (/api/metrics)
-                   • Grafana Live Performance Dashboard
-                   • Health Probes (/api/health)
-```
+```mermaid
+flowchart TD
+    subgraph Dev ["Developer Workflow"]
+        Code[Code Changes] --> Git[Git Repository]
+    end
 
----
+    subgraph IaC ["Infrastructure as Code (Terraform)"]
+        TF[Terraform Apply] --> VPC[AWS VPC & Subnets]
+        TF --> SG[Security Groups]
+        TF --> IAM[IAM Instance Profile]
+        TF --> S3[Amazon S3 Artifacts Bucket]
+        TF --> DDB[Amazon DynamoDB Tables]
+        TF --> EC2[AWS EC2 DevOps Host]
+    end
 
-## 2. Multi-Environment Model
+    subgraph Host ["EC2 Enterprise Compute Node"]
+        EC2 --> DockerD[Docker Engine]
+        EC2 --> K8s[Kubernetes Cluster K3s]
+        EC2 --> Jnk[Jenkins CI/CD Automation]
+        EC2 --> Nginx[Nginx Reverse Proxy :80]
+    end
 
-The system separates configuration and lifecycle across three standard tiers:
+    subgraph Pipeline ["Jenkins CI/CD Pipeline (Jenkinsfile)"]
+        Git -->|SCM Trigger| Jnk
+        Jnk --> J_Test[Lint & Validate Question Bank]
+        J_Test --> J_Docker[Docker Build Container Image]
+        J_Docker --> J_Scan[Trivy Security Scan]
+        J_Scan --> J_S3[Push Build Artifacts to S3]
+        J_S3 --> J_K8s[Deploy to Kubernetes via kubectl]
+        J_K8s --> J_Health[Health Check /api/health]
+    end
 
-| Environment | Purpose | Infrastructure | URL / Host |
-| :--- | :--- | :--- | :--- |
-| **Development** (`dev`) | Local iteration & feature testing | Docker Compose (`docker-compose.dev.yml`) or K8s namespace `ncert10-quiz-dev` | `http://localhost:3001` or `dev.boardready.example.com` |
-| **Staging** (`staging`) | Pre-production validation, integration tests | K8s namespace `ncert10-quiz-staging` or AWS ECS Staging Cluster | `staging.boardready.example.com` |
-| **Production** (`prod`) | Public student traffic, zero-downtime rolling updates, HPA | K8s namespace `ncert10-quiz` or AWS ECS Production Cluster | `boardready.example.com` |
+    subgraph Runtime ["Kubernetes Orchestration (k8s/)"]
+        K8s --> Deploy[Deployment: 2 Replicas]
+        Deploy --> Pod1[Pod 1: ncert10-quiz]
+        Deploy --> Pod2[Pod 2: ncert10-quiz]
+        Pod1 --> DDB
+        Pod2 --> DDB
+        K8s --> Svc[Service: NodePort 30080]
+        Svc --> Nginx
+    end
 
-Environment configuration files:
-* `.env.development`
-* `.env.staging`
-* `.env.production`
-* `terraform/environments/{dev,staging,prod}.tfvars`
-* `helm/ncert10-quiz/values-{dev,staging,prod}.yaml`
-
----
-
-## 3. Containerization (Docker)
-
-### Multi-Stage Build Architecture (`Dockerfile`)
-* **Stage 1 (`deps`)**: Caches dependencies from `package.json` to prevent unnecessary reinstallations when only application code changes.
-* **Stage 2 (`builder`)**: Validates the 120-question NCERT JSON banks (`scripts/validate-bank.mjs`) and generates an optimized standalone Next.js production build with telemetry disabled.
-* **Stage 3 (`runner`)**: Alpine Linux base (`node:20-alpine`) containing only the minimal runtime files.
-  * **Non-root Security**: Creates and runs under unprivileged user `nextjs:nodejs` (`UID 10001`).
-  * **Image Footprint**: Reduced from ~1.2 GB to ~110 MB.
-  * **Container Healthcheck**: Executes `wget -qO- http://127.0.0.1:3000/api/health` every 30 seconds.
-
-### Quick Docker Commands
-```bash
-# Build production image
-docker build -t ncert10-quiz:latest .
-
-# Run standalone container
-docker run -d -p 3000:3000 --name quiz-app ncert10-quiz:latest
+    subgraph Clients ["End Users & Developers"]
+        Students[Students / Public] -->|Port 80| Nginx
+        Devs[DevOps Engineers] -->|Port 8080| Jnk
+    end
 ```
 
 ---
 
-## 4. Docker Compose & Local Monitoring Stack
+## 2. Core Pillars of the DevOps Stack
 
-Three Compose configurations are available:
+### 1. Terraform (Infrastructure as Code)
+* **Location**: `terraform/`
+* **Responsibilities**:
+  * Provisions network infrastructure: VPC, public subnets, internet gateway, and route tables (`vpc.tf`).
+  * Provisions the enterprise S3 artifacts bucket with encryption and versioning (`s3.tf`).
+  * Provisions the EC2 host with automated bootstrap user-data (`ec2.tf`).
+  * Configures least-privilege IAM roles and instance profiles (`iam.tf`).
+  * Configures security group firewall rules (`security_groups.tf`).
+  * Provisions DynamoDB tables for quiz attempts and global/subject leaderboards (`dynamodb.tf`).
 
-### 1. Production Mode
-Runs the application with volume-backed persistence and health monitoring:
-```bash
-docker compose up --build -d
-```
+### 2. AWS EC2 (Compute Host)
+* **Instance Type**: `t3.medium` (or `t3.small` / `t3.micro` with configured swap).
+* **OS**: Amazon Linux 2023 / Ubuntu 22.04 LTS.
+* **Responsibilities**:
+  * Runs the **Docker daemon** for container builds and local execution.
+  * Runs the **Kubernetes (K3s)** single-node certified CNCF cluster.
+  * Runs the **Jenkins CI/CD** controller and local build executor.
+  * Runs **Nginx** reverse proxy mapping public port 80 to Kubernetes NodePort 30080.
 
-### 2. Development Mode (Live Hot Reloading)
-Mounts source code into the container so edits update instantly:
-```bash
-docker compose -f docker-compose.dev.yml up
-```
+### 3. Amazon S3 (Artifact & Package Storage)
+* **Location**: `terraform/s3.tf`
+* **Responsibilities**:
+  * Long-term archive for Jenkins build manifests, test reports, and metadata.
+  * Encrypted storage (AES256) with bucket versioning enabled.
+  * Private bucket with AWS Public Access Block strictly enforced.
 
-### 3. Production + Observability Stack (Prometheus + Grafana)
-Spins up the web application, Prometheus scraper, and pre-configured Grafana dashboard:
-```bash
-docker compose -f docker-compose.yml -f docker-compose.monitoring.yml up -d
-```
+### 4. Docker (Containerization)
+* **Location**: `Dockerfile`, `.dockerignore`, `docker-compose.yml`
+* **Features**:
+  * **Multi-stage build**:
+    1. `deps`: Installs production and build dependencies.
+    2. `builder`: Verifies question bank schema and compiles Next.js standalone package.
+    3. `runner`: Ultra-lightweight Alpine Linux runner running non-root `nextjs` user.
+  * Self-contained healthcheck via `wget /api/health`.
 
-#### Monitoring Access Endpoints:
-* **Web Application:** `http://localhost:3001`
-* **Metrics Endpoint:** `http://localhost:3001/api/metrics`
-* **Prometheus UI:** `http://localhost:9090`
-* **Grafana Dashboard:** `http://localhost:3002` (Login: `admin` / `admin`)
-  * Pre-loaded dashboard: **BoardReady - Production Observability** (Uptime, heap memory, score distribution, question count by subject).
+### 5. Kubernetes (Container Orchestration)
+* **Location**: `k8s/`
+* **Manifests**:
+  * `namespace.yaml`: Dedicated `ncert10-quiz` namespace.
+  * `configmap.yaml` & `secret.yaml`: Externalized environment and AWS DynamoDB configs.
+  * `deployment.yaml`: Replicas with rolling update strategy (`maxSurge: 1`, `maxUnavailable: 0`), non-root security context, CPU/Memory limits, and readiness/liveness probes.
+  * `service.yaml`: `NodePort 30080` routing traffic to pod port 3000.
+  * `hpa.yaml`: Horizontal Pod Autoscaler scaling from 2 to 10 pods based on CPU/Memory load.
+  * `kustomization.yaml`: Single command deployment (`kubectl apply -k k8s/`).
 
----
-
-## 5. Continuous Integration & Delivery (CI/CD)
-
-### A. GitHub Actions Workflows (`.github/workflows/`)
-
-1. **`ci.yml` (Quality Gate)**:
-   * Triggers on every push & pull request to `main`/`master`.
-   * **Steps:**
-     1. NCERT Question Bank schema and integrity validation (`npm run validate:bank`).
-     2. ESLint code style and quality check (`npm run lint`).
-     3. TypeScript static type verification (`npm run typecheck`).
-     4. Next.js production build (`npm run build`).
-     5. Secret leak scanning with **Gitleaks**.
-     6. File and dependency vulnerability scanning with **Trivy**.
-     7. Dry-run Docker container build with GitHub Actions layer cache.
-
-2. **`release-and-publish.yml` (Container Publishing)**:
-   * Triggers on commits to `main`/`master` and release tags (`v*.*.*`).
-   * Builds multi-platform image with Docker Buildx.
-   * Pushes versioned tags (`latest`, `v1.0.0`, `sha-xxxx`) to **GitHub Container Registry (`ghcr.io`)**.
-   * Executes post-push image CVE vulnerability scan using Trivy.
-
-3. **`deploy-aws-ecs.yml` (Zero-Downtime AWS ECS Deploy)**:
-   * Manual dispatch or automated trigger with environment choice (`dev`, `staging`, `prod`).
-   * Uses AWS OIDC role assumption.
-   * Renders new image tag in the ECS Task Definition and initiates a zero-downtime rolling update.
-
-### B. Jenkins CI/CD Pipeline (`Jenkinsfile`)
-
-A declarative pipeline for teams self-hosting Jenkins:
-* **Stages:**
-  1. `Checkout`: SCM pull.
-  2. `Install Dependencies`: `npm ci`.
-  3. `Validate Question Bank`: `scripts/validate-bank.mjs`.
-  4. `Code Quality`: Parallel execution of Linting + TypeScript type checks.
-  5. `Production Build`: Compiles Next.js bundle.
-  6. `Container Build`: Tags with build number and commit hash.
-  7. `Security Vulnerability Scan`: Scans container with Trivy for HIGH and CRITICAL CVEs.
-  8. `Push to Container Registry`: Secure credentials injection for GHCR / Docker Hub.
-  9. `Deploy to Staging`: Automated Helm upgrade in `ncert10-quiz-staging`.
-  10. `Deploy to Production`: Manual approval gate triggered on Git release tags.
+### 6. Jenkins (Continuous Integration & Continuous Deployment)
+* **Location**: `Jenkinsfile`
+* **Pipeline Stages**:
+  1. **Checkout**: Pulls latest Git source.
+  2. **Install**: Installs dependencies cleanly.
+  3. **Verification**: Parallel ESLint, TypeScript typecheck, and NCERT bank schema validation.
+  4. **Docker Build**: Compiles Docker image tagged with `${BUILD_NUMBER}`.
+  5. **Security Scan**: Scans Docker image for CVEs using Trivy.
+  6. **S3 Archive**: Ships build metadata and logs to Amazon S3.
+  7. **Deploy to K8s**: Executes rolling deployment via `kubectl apply -k ./k8s/`.
+  8. **Smoke Test**: Queries live `/api/health` probe to confirm service uptime.
 
 ---
 
-## 6. Kubernetes & Helm Deployment
+## 3. Quickstart & Deployment Commands
 
-### A. Raw Manifests (`k8s/`)
-Deployable directly using Kustomize:
-```bash
-kubectl apply -k k8s/
-```
-Manifests included:
-* `namespace.yaml`: Dedicated `ncert10-quiz` namespace.
-* `deployment.yaml`: Rolling update (`maxSurge: 1`, `maxUnavailable: 0`), least privilege securityContext, non-root user, liveness/readiness probes.
-* `service.yaml`: Internal `ClusterIP` exposing port 80 → container port 3000.
-* `ingress.yaml`: NGINX ingress with TLS certificate auto-provisioning via Cert-Manager.
-* `hpa.yaml`: Horizontal Pod Autoscaler scaling from 2 to 10 pods when CPU > 70% or Memory > 80%.
-* `pvc.yaml`: Persistent volume claim for server-side leaderboard storage.
-
-### B. Enterprise Helm Chart (`helm/ncert10-quiz/`)
-Deploy to any Kubernetes cluster with environment overrides:
-
-```bash
-# Lint the chart
-helm lint ./helm/ncert10-quiz
-
-# Deploy to Development
-helm upgrade --install ncert10-quiz-dev ./helm/ncert10-quiz \
-  -n ncert10-quiz-dev --create-namespace \
-  -f ./helm/ncert10-quiz/values-dev.yaml
-
-# Deploy to Staging
-helm upgrade --install ncert10-quiz-staging ./helm/ncert10-quiz \
-  -n ncert10-quiz-staging --create-namespace \
-  -f ./helm/ncert10-quiz/values-staging.yaml
-
-# Deploy to Production
-helm upgrade --install ncert10-quiz-prod ./helm/ncert10-quiz \
-  -n ncert10-quiz --create-namespace \
-  -f ./helm/ncert10-quiz/values-prod.yaml
-```
-
----
-
-## 7. Infrastructure as Code (IaC) with Terraform for AWS ECS
-
-Located in [`terraform/`](file:///c:/Users/lenovo/Projects/ncert10-quiz/terraform):
-* `vpc.tf`: Multi-AZ VPC across 2 Availability Zones with public subnets, internet gateway, and route tables.
-* `security_groups.tf`: Least-privilege security groups (ALB accepts ports 80/443; ECS tasks strictly accept ingress from ALB security group on port 3000).
-* `alb.tf`: Application Load Balancer with target group health check at `/api/health`.
-* `ecs.tf`: ECS Cluster, CloudWatch Log Group (30-day retention), IAM execution roles, Fargate Task Definition, and ECS Service with Target Tracking AutoScaling.
-
-### Terraform Commands
+### Step 1: Provision AWS Infrastructure via Terraform
 ```bash
 cd terraform
-
-# 1. Initialize providers
 terraform init
+terraform plan -var-file="environments/dev.tfvars"
+terraform apply -var-file="environments/dev.tfvars" -auto-approve
+```
 
-# 2. Plan deployment for Staging
-terraform plan -var-file="environments/staging.tfvars"
+### Step 2: Access Endpoints
+After `terraform apply` finishes, it outputs:
+* **Quiz App URL**: `http://<EC2_PUBLIC_IP>` (routed to Kubernetes)
+* **Jenkins Dashboard**: `http://<EC2_PUBLIC_IP>:8080`
+* **S3 Artifacts Bucket**: `<bucket-name>`
 
-# 3. Apply deployment
-terraform apply -var-file="environments/staging.tfvars" -auto-approve
-
-# 4. Plan/Apply Production
-terraform apply -var-file="environments/prod.tfvars"
+### Step 3: Run Local Validation Before Commit
+```bash
+npm run validate:bank   # Verifies all 120 NCERT questions
+npm run typecheck       # Verifies TypeScript safety
+npm run build           # Compiles Next.js standalone build
 ```
 
 ---
 
-## 8. Observability & Monitoring
+## 4. Useful Operational Commands on the EC2 Host
 
-### Metrics Exposition (`/api/metrics`)
-The application exposes Prometheus-compatible metrics in standard exposition format:
-* `process_uptime_seconds`: Application process uptime.
-* `nodejs_heap_size_total_bytes` & `nodejs_heap_size_used_bytes`: Runtime memory allocations.
-* `nodejs_resident_memory_bytes`: Physical RAM utilization.
-* `ncert10_quiz_healthy`: Health status gauge.
-* `ncert10_quiz_questions_total{subject="..."}`: Available questions per subject.
-* `ncert10_quiz_attempts_total`: Total recorded quiz attempts.
-* `ncert10_quiz_average_score_percent`: System-wide average score.
+```bash
+# Check Docker images and containers
+docker ps
+docker images
 
-### Pre-Configured Grafana Dashboard
-Mounted automatically in `monitoring/grafana/dashboards/boardready-dashboard.json`:
-* Live color-coded Stat panels for Health, Uptime, Attempts, and Leaderboard.
-* Gauge for average score percentage with thresholds (Red <50%, Yellow 50-74%, Green 75%+).
-* Time-series chart tracking Node.js process heap memory over time.
-* Bar gauge displaying the 120 NCERT questions distributed across subjects.
+# Check Kubernetes Pods, Deployments, and Services
+kubectl get pods -n ncert10-quiz
+kubectl get svc -n ncert10-quiz
+kubectl logs -l app.kubernetes.io/name=ncert10-quiz -n ncert10-quiz --tail=50
 
----
+# Check Jenkins service
+systemctl status jenkins
 
-## 9. DevSecOps & Security Hardening
-
-1. **Static Analysis & Secret Detection**:
-   * Gitleaks scans git history and workspace for accidental secret leaks in CI.
-   * Trivy scans packages and filesystem for vulnerable dependencies before compilation.
-2. **Container Security**:
-   * Base image: `node:20-alpine` (minimal CVE profile).
-   * Runs as non-root user (`USER nextjs`, UID 10001).
-   * Linux capabilities dropped in Kubernetes (`capabilities: drop: ["ALL"]`).
-   * Read-only container root file system supported.
-3. **Application Integrity**:
-   * Answer evaluation occurs exclusively on the server (`/api/attempts`). The browser never receives answer keys in `/api/quiz`.
-   * Public API responses strip hidden fields using `toPublic()`.
+# Inspect S3 Artifacts
+aws s3 ls s3://<s3_artifacts_bucket>/builds/
+```

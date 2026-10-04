@@ -3,8 +3,14 @@ import { chaptersFor, getSubject, pickQuiz, toPublic } from "@/lib/bank";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
-export const dynamic = "force-dynamic";
-export const revalidate = 0;
+export function generateStaticParams() {
+  return [
+    { subjectId: "mathematics" },
+    { subjectId: "science" },
+    { subjectId: "social-science" },
+    { subjectId: "english" },
+  ];
+}
 
 export default async function QuizPage({
   params,
@@ -14,7 +20,8 @@ export default async function QuizPage({
   searchParams: Promise<{ chapter?: string }>;
 }) {
   const { subjectId } = await params;
-  const { chapter } = await searchParams;
+  const resolvedSearchParams = await searchParams;
+  const chapter = resolvedSearchParams?.chapter;
   const subject = getSubject(subjectId);
   if (!subject) notFound();
   const questions = pickQuiz(subjectId, chapter ?? null).map(toPublic);

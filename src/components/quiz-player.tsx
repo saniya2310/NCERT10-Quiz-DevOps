@@ -2,10 +2,12 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
-import type { PublicQuestion } from "@/lib/types";
+import type { AttemptResult, PublicQuestion, Question } from "@/lib/types";
 import { useNickname } from "./nickname-field";
 import { getStudentSettings } from "@/lib/student-settings";
 import { saveResult } from "@/lib/saved-results";
+import { dailyQuiz, findQuestion, getSubject, pickQuiz, toPublic } from "@/lib/bank";
+import { scoreAttempt } from "@/lib/scoring";
 
 type Props = {
   subjectId: string;
@@ -80,7 +82,7 @@ export function QuizPlayer({ subjectId, chapter, daily, questions: initialQuesti
     [index, questions.length, selected],
   );
 
-  async function generateNewQuestions() {
+  function generateNewQuestions() {
     setGenerating(true);
     setError(null);
     try {
@@ -89,25 +91,13 @@ export function QuizPlayer({ subjectId, chapter, daily, questions: initialQuesti
         const raw = sessionStorage.getItem("boardready-recent-ids");
         if (raw) exclude = JSON.parse(raw);
       } catch {}
-      const params = new URLSearchParams();
-      if (daily) {
-        params.set("daily", "1");
-      } else {
-        params.set("subject", subjectId);
-        if (chapter && chapter !== "Mixed chapter set") {
-          params.set("chapter", chapter);
-        }
-      }
-      if (exclude.length > 0) {
-        params.set("exclude", exclude.slice(0, 20).join(","));
-      }
-      params.set("t", Date.now().toString());
 
-      const res = await fetch(`/api/quiz?${params.toString()}`);
-      if (!res.ok) throw new Error("Failed to load new questions");
-      const data = await res.json();
-      if (Array.isArray(data.questions) && data.questions.length > 0) {
-        setQuestions(data.questions);
+      const newQuestions = daily
+        ? dailyQuiz().map(toPublic)
+        : pickQuiz(subjectId, chapter && chapter !== "Mixed chapter set" ? chapter : null, 10, { excludeIds: exclude }).map(toPublic);
+
+      if (newQuestions.length > 0) {
+        setQuestions(newQuestions);
         setIndex(0);
         setSelected(null);
         setAnswers({});
@@ -145,51 +135,55 @@ export function QuizPlayer({ subjectId, chapter, daily, questions: initialQuesti
   async function finish(nextAnswers: Record<string, string | null>) {
     setBusy(true);
     setError(null);
-    const payload = {
-      nickname: settings.nickname || nickname,
+    const answersList = questions.map((q) => ({
+      questionId: q.id,
+      optionId: nextAnswers[q.id] ?? null,
+    }));
+
+    const fullQuestions = questions
+      .map((q) => findQuestion(q.id))
+      .filter((q): q is Question => Boolean(q));
+
+    const scored = scoreAttempt(fullQuestions, answersList);
+    const subject = getSubject(subjectId);
+    const attemptId = typeof crypto !== "undefined" && crypto.randomUUID ? crypto.randomUUID() : `att-${Date.now()}`;
+
+    const data: AttemptResult = {
+      id: attemptId,
+      nickname: settings.nickname || nickname || "Student",
       subjectId: daily ? "daily" : subjectId,
+      subjectName: subject?.name ?? (daily ? "Daily mix" : subjectId),
       chapter,
       daily: Boolean(daily),
+      createdAt: new Date().toISOString(),
       durationSec: Math.round((Date.now() - started) / 1000),
-      answers: questions.map((q) => ({
-        questionId: q.id,
-        optionId: nextAnswers[q.id] ?? null,
-      })),
+      ...scored,
     };
 
     try {
-      const res = await fetch("/api/attempts", {
+      const raw = sessionStorage.getItem("boardready-recent-ids");
+      const existing: string[] = raw ? JSON.parse(raw) : [];
+      const nextIds = [...questions.map((q) => q.id), ...existing].slice(0, 40);
+      sessionStorage.setItem("boardready-recent-ids", JSON.stringify(nextIds));
+    } catch {}
+
+    try {
+      await fetch("/api/attempts", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
+        body: JSON.stringify({
+          nickname: data.nickname,
+          subjectId: data.subjectId,
+          chapter: data.chapter,
+          daily: data.daily,
+          durationSec: data.durationSec,
+          answers: answersList,
+        }),
       });
+    } catch {}
 
-      if (!res.ok) {
-        setBusy(false);
-        setError("Could not score this attempt. Try again.");
-        return;
-      }
-
-      const data = await res.json();
-
-      // Remember recently answered questions so consecutive quizzes generate unique questions
-      try {
-        const raw = sessionStorage.getItem("boardready-recent-ids");
-        const existing: string[] = raw ? JSON.parse(raw) : [];
-        const nextIds = [...questions.map((q) => q.id), ...existing].slice(0, 40);
-        sessionStorage.setItem("boardready-recent-ids", JSON.stringify(nextIds));
-      } catch {}
-
-      // If student has auto-save enabled in settings, save to student's saved results
-      if (settings.autoSaveResults) {
-        saveResult(data);
-      }
-
-      router.push(`/results/${data.id}`);
-    } catch {
-      setBusy(false);
-      setError("Network error while scoring. Please try again.");
-    }
+    saveResult(data);
+    router.push(`/results/${data.id}`);
   }
 
   function next() {

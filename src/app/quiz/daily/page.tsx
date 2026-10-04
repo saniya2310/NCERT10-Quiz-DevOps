@@ -1,8 +1,6 @@
 import { QuizPlayer } from "@/components/quiz-player";
 import { dailyQuiz, toPublic, todayKey } from "@/lib/bank";
 
-export const dynamic = "force-dynamic";
-export const revalidate = 0;
 
 export default function DailyQuizPage() {
   const questions = dailyQuiz().map(toPublic);

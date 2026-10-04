@@ -7,7 +7,7 @@ export const dynamic = "force-dynamic";
 export async function GET() {
   const mem = process.memoryUsage();
   const uptime = process.uptime();
-  const stats = getStoreStats();
+  const stats = await getStoreStats();
 
   const lines: string[] = [];
 
