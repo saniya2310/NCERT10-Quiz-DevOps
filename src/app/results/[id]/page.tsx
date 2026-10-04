@@ -18,10 +18,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!attempt) return { title: "Result" };
   return {
     title: `${attempt.percent}% for ${attempt.nickname}`,
-    description: `${attempt.nickname} scored ${attempt.percent}% on BoardReady.`,
+    description: `${attempt.nickname} scored ${attempt.percent}% on NCERT10-Quiz-DevOps.`,
     openGraph: {
       title: `${attempt.nickname} scored ${attempt.percent}%`,
-      description: "Class 10 NCERT quiz on BoardReady",
+      description: "Class 10 NCERT quiz on NCERT10-Quiz-DevOps",
       url: `${appUrl()}/results/${id}`,
     },
   };
