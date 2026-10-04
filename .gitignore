@@ -14,4 +14,6 @@ dist
 *.tfstate
 *.tfstate.*
 .terraform.lock.hcl
+app.tar.gz
+ssm_*.txt
 

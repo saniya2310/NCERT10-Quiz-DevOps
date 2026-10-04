@@ -1,6 +1,6 @@
-# BoardReady (ncert10-quiz)
+# NCERT10-Quiz-DevOps
 
-Interactive Class 10 NCERT quiz platform: chapter practice, instant server-side scoring, leaderboards, and shareable result pages.
+Interactive Class 10 NCERT quiz platform with enterprise DevOps: chapter practice, instant server-side scoring, leaderboards, and shareable result pages.
 
 This is a student-facing web app with a notebook-style UI, not an official CBSE or NCERT product. Question items are original MCQs mapped to Class 10 NCERT chapter themes.
 

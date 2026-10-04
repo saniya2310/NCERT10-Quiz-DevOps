@@ -3,7 +3,7 @@ export function appUrl() {
 }
 
 export function shareCopy(nickname: string, percent: number, subject: string) {
-  return `${nickname} scored ${percent}% on BoardReady (${subject}, Class 10 NCERT). Can you beat it?`;
+  return `${nickname} scored ${percent}% on NCERT10-Quiz-DevOps (${subject}, Class 10 NCERT). Can you beat it?`;
 }
 
 export function whatsappUrl(text: string, url: string) {

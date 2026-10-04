@@ -73,6 +73,11 @@ resource "aws_iam_role_policy_attachment" "devops_ec2_attach" {
   policy_arn = aws_iam_policy.devops_ec2_policy.arn
 }
 
+resource "aws_iam_role_policy_attachment" "devops_ec2_ssm" {
+  role       = aws_iam_role.devops_ec2.name
+  policy_arn = "arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore"
+}
+
 resource "aws_iam_instance_profile" "devops_ec2" {
   name = "${var.app_name}-${var.environment}-devops-ec2-profile"
   role = aws_iam_role.devops_ec2.name

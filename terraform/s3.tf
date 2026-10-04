@@ -35,3 +35,11 @@ resource "aws_s3_bucket_public_access_block" "artifacts" {
   ignore_public_acls      = true
   restrict_public_buckets = true
 }
+
+# Upload App Bundle to S3 for automated EC2 bootstrap
+resource "aws_s3_object" "app_bundle" {
+  bucket = aws_s3_bucket.artifacts.id
+  key    = "app.tar.gz"
+  source = "${path.module}/../app.tar.gz"
+  etag   = filemd5("${path.module}/../app.tar.gz")
+}

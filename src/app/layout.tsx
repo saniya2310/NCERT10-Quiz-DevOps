@@ -5,8 +5,8 @@ import { Shell } from "@/components/shell";
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3001"),
   title: {
-    default: "BoardReady — Class 10 NCERT Quiz",
-    template: "%s · BoardReady",
+    default: "NCERT10-Quiz-DevOps — Class 10 NCERT Quiz",
+    template: "%s · NCERT10-Quiz-DevOps",
   },
   description:
     "Interactive Class 10 NCERT quizzes with instant scoring, chapter practice, leaderboards, and shareable results.",

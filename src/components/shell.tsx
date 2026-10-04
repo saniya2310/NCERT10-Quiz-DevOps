@@ -13,7 +13,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
     <div className="mx-auto min-h-screen max-w-5xl px-4 py-6">
       <header className="mb-8 flex flex-wrap items-center justify-between gap-4 rounded-2xl bg-white/80 px-4 py-3 shadow-sheet backdrop-blur">
         <Link href="/" className="font-display text-2xl tracking-tight">
-          BoardReady
+          NCERT10-Quiz-DevOps
           <span className="ml-2 align-middle text-sm font-sans font-semibold text-ink/60">Class 10 NCERT</span>
         </Link>
         <nav className="flex flex-wrap gap-1 text-sm font-semibold">

@@ -16,7 +16,7 @@ export function ShareBar({ nickname, percent, subject, url }: Props) {
 
   async function nativeShare() {
     if (navigator.share) {
-      await navigator.share({ title: "BoardReady score", text, url });
+      await navigator.share({ title: "NCERT10-Quiz-DevOps score", text, url });
       return;
     }
     await copy();
