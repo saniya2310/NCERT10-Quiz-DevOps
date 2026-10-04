@@ -70,7 +70,7 @@ pipeline {
                             if (isUnix()) {
                                 sh 'npm run lint || true'
                             } else {
-                                bat 'npm run lint || exit 0'
+                                bat 'npm run lint || exit /b 0'
                             }
                         }
                     }
@@ -116,10 +116,11 @@ pipeline {
                             )
                             if not "%DOCKER_CMD%"=="" (
                                 echo Found Docker CLI: %DOCKER_CMD%
-                                %DOCKER_CMD% build -t ${env.IMAGE_NAME}:${env.IMAGE_TAG} -t ${env.IMAGE_NAME}:latest . || exit 0
+                                %DOCKER_CMD% build -t ${env.IMAGE_NAME}:${env.IMAGE_TAG} -t ${env.IMAGE_NAME}:latest . || exit /b 0
                             ) else (
                                 echo Docker CLI not detected on Windows system PATH. Skipping container build.
                             )
+                            exit /b 0
                         """
                     }
                 }
@@ -145,6 +146,7 @@ pipeline {
                             ) || (
                                 echo Trivy security scanner not detected. Skipping scan.
                             )
+                            exit /b 0
                         """
                     }
                 }
@@ -184,6 +186,7 @@ pipeline {
                             ) || (
                                 echo AWS CLI not configured on agent, archiving locally.
                             )
+                            exit /b 0
                         """
                     }
                 }
@@ -212,6 +215,7 @@ pipeline {
                             ) || (
                                 echo kubectl not detected on agent.
                             )
+                            exit /b 0
                         """
                     }
                 }
@@ -237,6 +241,7 @@ pipeline {
                             ) || (
                                 echo Warning: Health check endpoint did not return 200 OK immediately.
                             )
+                            exit /b 0
                         """
                     }
                 }
@@ -251,7 +256,10 @@ pipeline {
                 if (isUnix()) {
                     sh 'docker image prune -f || true'
                 } else {
-                    bat 'where docker >nul 2>nul && docker image prune -f || exit 0'
+                    bat """
+                        where docker >nul 2>nul && docker image prune -f
+                        exit /b 0
+                    """
                 }
             }
         }
