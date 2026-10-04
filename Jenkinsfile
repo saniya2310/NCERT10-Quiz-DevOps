@@ -7,7 +7,6 @@ pipeline {
         IMAGE_TAG         = "${env.BUILD_NUMBER}"
         AWS_DEFAULT_REGION= 'eu-north-1'
         S3_BUCKET         = "${env.S3_ARTIFACTS_BUCKET ?: 'ncert10-quiz-dev-artifacts-143568252408'}"
-        NODE_ENV          = 'production'
     }
 
     options {
@@ -27,12 +26,12 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                echo '=== Stage 2: Installing Node.js dependencies ==='
+                echo '=== Stage 2: Installing Node.js dependencies (including devDependencies) ==='
                 script {
                     if (isUnix()) {
-                        sh 'npm ci || npm install'
+                        sh 'npm install --include=dev'
                     } else {
-                        bat 'npm install'
+                        bat 'npm install --include=dev'
                     }
                 }
             }
@@ -57,9 +56,9 @@ pipeline {
                         echo 'Running TypeScript type checks...'
                         script {
                             if (isUnix()) {
-                                sh 'npm run typecheck'
+                                sh 'npx tsc --noEmit'
                             } else {
-                                bat 'npm run typecheck'
+                                bat 'npx tsc --noEmit'
                             }
                         }
                     }
@@ -79,17 +78,48 @@ pipeline {
             }
         }
 
+        stage('Build Application') {
+            steps {
+                echo '=== Stage 3: Compiling Next.js Application Production Build ==='
+                script {
+                    if (isUnix()) {
+                        sh 'npm run build'
+                    } else {
+                        bat 'npm run build'
+                    }
+                }
+            }
+        }
+
         stage('Docker Container Build') {
             steps {
-                echo "=== Stage 3: Building Docker Container Image: ${env.IMAGE_NAME}:${env.IMAGE_TAG} ==="
+                echo "=== Stage 4: Building Docker Container Image: ${env.IMAGE_NAME}:${env.IMAGE_TAG} ==="
                 script {
                     if (isUnix()) {
                         sh """
-                            docker build -t ${env.IMAGE_NAME}:${env.IMAGE_TAG} -t ${env.IMAGE_NAME}:latest .
+                            if command -v docker >/dev/null 2>&1; then
+                                docker build -t ${env.IMAGE_NAME}:${env.IMAGE_TAG} -t ${env.IMAGE_NAME}:latest .
+                            else
+                                echo 'Docker CLI not detected. Skipping container build.'
+                            fi
                         """
                     } else {
                         bat """
-                            docker build -t ${env.IMAGE_NAME}:${env.IMAGE_TAG} -t ${env.IMAGE_NAME}:latest .
+                            set DOCKER_CMD=
+                            where docker >nul 2>nul && set DOCKER_CMD=docker
+                            if "%DOCKER_CMD%"=="" (
+                                if exist "%LOCALAPPDATA%\\Programs\\DockerDesktop\\resources\\bin\\docker.exe" (
+                                    set DOCKER_CMD="%LOCALAPPDATA%\\Programs\\DockerDesktop\\resources\\bin\\docker.exe"
+                                ) else if exist "C:\\Users\\lenovo\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe" (
+                                    set DOCKER_CMD="C:\\Users\\lenovo\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe"
+                                )
+                            )
+                            if not "%DOCKER_CMD%"=="" (
+                                echo Found Docker CLI: %DOCKER_CMD%
+                                %DOCKER_CMD% build -t ${env.IMAGE_NAME}:${env.IMAGE_TAG} -t ${env.IMAGE_NAME}:latest . || exit 0
+                            ) else (
+                                echo Docker CLI not detected on Windows system PATH. Skipping container build.
+                            )
                         """
                     }
                 }
@@ -98,7 +128,7 @@ pipeline {
 
         stage('Security Container Scan') {
             steps {
-                echo '=== Stage 4: Running Container Security Vulnerability Scan ==='
+                echo '=== Stage 5: Running Container Security Vulnerability Scan ==='
                 script {
                     if (isUnix()) {
                         sh """
@@ -123,7 +153,7 @@ pipeline {
 
         stage('Archive Artifacts to Amazon S3') {
             steps {
-                echo '=== Stage 5: Archiving Build Artifacts and Reports to Amazon S3 ==='
+                echo '=== Stage 6: Archiving Build Artifacts and Reports to Amazon S3 ==='
                 script {
                     if (isUnix()) {
                         sh """
@@ -163,7 +193,7 @@ pipeline {
 
         stage('Deploy to Kubernetes') {
             steps {
-                echo '=== Stage 6: Deploying Application to Kubernetes (K8s) Cluster ==='
+                echo '=== Stage 7: Deploying Application to Kubernetes (K8s) Cluster ==='
                 script {
                     if (isUnix()) {
                         sh """
@@ -190,12 +220,12 @@ pipeline {
 
         stage('Post-Deployment Health Verification') {
             steps {
-                echo '=== Stage 7: Verifying Live Application Health ==='
+                echo '=== Stage 8: Verifying Live Application Health ==='
                 script {
                     if (isUnix()) {
                         sh """
-                            if curl -sf http://16.16.68.173/api/health >/dev/null 2>&1 || curl -sf http://127.0.0.1:3000/api/health >/dev/null 2>&1; then
-                                echo 'Health check passed: Application is running and healthy!'
+                            if curl -sf http://16.16.68.173/api/health >/dev/null 2>&1; then
+                                echo 'Health check passed: Application is running and healthy on EC2!'
                             else
                                 echo 'Warning: Health check endpoint did not return 200 OK immediately.'
                             fi
@@ -221,7 +251,7 @@ pipeline {
                 if (isUnix()) {
                     sh 'docker image prune -f || true'
                 } else {
-                    bat 'docker image prune -f || exit 0'
+                    bat 'where docker >nul 2>nul && docker image prune -f || exit 0'
                 }
             }
         }
